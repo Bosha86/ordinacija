@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<div class="col-md-9 offset-2">
-    <small>sva polja su obavezna</small>
-        <form name="registracija" method="POST" action="<?php echo site_url('Registracija/regKor') ?>">
 
+<small>sva polja su obavezna</small>
+
+<div class="col-md-10 offset-2">
+ 
+        <form name="registracija" method="POST" action="<?php echo site_url('Registracija/regKor') ?>" >
+          
             <div class="row">
-                <div class="form-group col-md-3 offset-2">
+                <div class="form-group col-md-3 offset-2">                 
                     <input type="text" name='ime' value="<?php echo set_value('ime') ?>" class="form-control" placeholder="Ime"><?php echo form_error('ime') ?><br>
                     <input type="text" name='korisnicko' value="<?php echo set_value('korisnicko') ?>" class="form-control" placeholder="Korisnicko ime"><?php echo form_error('korisnicko') ?><br>
                     <input type="text" name="lozinka" value="<?php echo set_value('lozinka') ?>" class="form-control" placeholder="Lozinka"><?php echo form_error('lozinka') ?><br>
@@ -31,5 +29,4 @@ and open the template in the editor.
         </form>
 
 
-    </body>
-</html>
+   
