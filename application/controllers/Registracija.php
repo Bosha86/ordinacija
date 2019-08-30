@@ -38,7 +38,7 @@ class Registracija extends CI_Controller {
         $this->form_validation->set_rules('prezime', 'Prezime', 'required');
         $this->form_validation->set_rules('korisnicko', 'Korisnicko ime', 'required|is_unique[korisnik.korisnicko]|min_length[3]');
         $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|is_unique[korisnik.email]');
-        $this->form_validation->set_rules('lozinka', 'Lozinka', 'required|min_length[3]');
+        $this->form_validation->set_rules('lozinka', 'Lozinka', 'required|callback_valid_password');
         $this->form_validation->set_rules('ponLozinka', 'Potvrda lozinke', 'required|matches[lozinka]');
         // $this->form_validation->set_rules('telefon', 'Telefon', 'required|regex_match[/^\d{3}\/?\d{6,7}$/]');
         $this->form_validation->set_rules('rodjen', 'Datum rodjenja', 'required');
@@ -62,5 +62,43 @@ class Registracija extends CI_Controller {
             redirect('Login');
         }
     }
+    
+     public function valid_password($lozinka){
+        
+        $lozinka = trim($lozinka);
+        $malaSlova = '/[a-z]/';
+        $velikaSlova = '/[A-Z]/';
+        $brojevi = '/[0-9]/';
+        $prvoVeliko = "/^[A-Z]/";
+        $dvaIsta  = '/([\w])\1/';
+        
+        
+        if(strlen($lozinka) < 8){
+            $this->form_validation->set_message('valid_password', '{field} mora da ima minimum 8 karaktera');
+            return false;
+        } else if(strlen($lozinka) > 12){
+            $this->form_validation->set_message('valid_password', '{field} mora da ima najvise 12 karaktera');
+            return false;
+        } else if(preg_match_all($velikaSlova, $lozinka) < 2){
+            $this->form_validation->set_message('valid_password', '{field} mora da ima najmanje 2 velika slova');
+            return false;
+        } else if(preg_match_all($malaSlova, $lozinka) < 3){
+            $this->form_validation->set_message('valid_password', '{field} mora da ima minimum 3 mala slova');
+            return false;
+        } else if(preg_match_all($brojevi, $lozinka) < 1){
+            $this->form_validation->set_message('valid_password', '{field} mora da imam bar 1 broj ');
+            return false;
+        } else if (!preg_match_all($prvoVeliko, $lozinka)){
+             $this->form_validation->set_message('valid_password', '{field} mora da ima prvo veliko slovo');
+             return false;
+        } else if(preg_match_all($dvaIsta, $lozinka)){
+            $this->form_validation->set_message('valid_password', '{field} ne sme imati dva ista uzastopna karaktera');
+            return false;
+        }
+        
+        return true;
+        
+    }
 
-}
+    }
+    
