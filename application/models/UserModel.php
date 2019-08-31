@@ -41,5 +41,19 @@ class UserModel extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
+    
+    public function prethodneUsluge($idKor){
+        
+        $this->db->select('termin.datum, termin.vreme, termin.stanje, usluge.naziv, usluge.cena')
+                ->from('termin')
+                ->join('uradjeno', 'uradjeno.idTer = termin.idTer')
+                ->join('usluge', 'usluge.idUsl = uradjeno.idUsl')
+                ->join('korisnik', 'korisnik.idKor = termin.idKor')
+                ->where('korisnik.idKor', $idKor);
+              
+          $query = $this->db->get();
+          return $query->result_array();
+               
+    }
 
 }
