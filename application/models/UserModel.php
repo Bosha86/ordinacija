@@ -17,10 +17,10 @@ class UserModel extends CI_Model {
 
         $this->db->where('korisnicko', $username);
         $query = $this->db->get('korisnik');
-        $result = $query->row_array();
+        $korisnik = $query->row_array();
 
-        if (!empty($result) && password_verify($password, $result['lozinka'])) {
-            return $result;
+        if (!empty($korisnik) && password_verify($password, $korisnik['lozinka'])) {
+            return $korisnik;
         } else {
             return false;
         }
@@ -35,7 +35,7 @@ class UserModel extends CI_Model {
 
     public function dohvatiKorisnika($username) {
 
-
+        $this->db->select('*');
         $this->db->where('korisnicko', $username);
         $this->db->from('korisnik');
         $query = $this->db->get();
