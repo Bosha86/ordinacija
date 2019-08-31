@@ -19,8 +19,9 @@ class User extends CI_Controller {
     
     public function index(){
         
-       
+        $idKor = $this->session->userdata('user')['idKor'];
         $data['middle'] = 'middle/pocetna';
+        $data['middle_data'] = ['prethodneUsluge' => $this->UserModel->prethodneUsluge($idKor)];
         $this->load->view('viewTemplate', $data);
     }
     
