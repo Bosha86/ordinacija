@@ -1,7 +1,6 @@
 <div>
     <?php echo '..   ' ?>        
 </div>
-
 <?php
 $user = $this->session->userdata('user');
 $korisnicko = $user['korisnicko'];
@@ -55,53 +54,80 @@ $rodjendan = $user['rodjen'];
         </div>
         <div class="col-6 col-sm">
 
-            <h5>Usluge</h5>
+            <h5>Termini</h5>
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Datum</th>
                         <th scope="col">Vreme</th>
+                        <th scope="col">Zakazana usluga</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Naziv</th>
-                        <th scope="col">Cena</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     <?php
                      $rbr = 0; 
-                    foreach ($prethodneUsluge as $p) {
+                    foreach ($termini as $t) {
                        $rbr +=1;
-                        $datum = $p['datum'];
-                        $vreme = $p['vreme'];
-                        $status = $p['stanje'];
-                        $naziv = $p['naziv'];
-                        $cena = $p['cena'];
+                        $idTer = $t['idTer'];
+                        $datum = $t['datum'];
+                        $vreme = $t['vreme'];
+                        $status = $t['stanje'];
+                        $usluga = $t['naziv'];
+                     
                         ?>     
                         <tr>
                             <th scope="row"><?php echo $rbr; ?></th>
                             <td><?php echo $datum ?></td>
                             <td><?php echo $vreme ?></td>
+                            <td><?php echo $usluga ?></td>
                             <td><?php
                                 if ($status == 'u') {
-                                    echo '<p style="color:blue">'.'uradjeno'.'</p>';
+                                    echo "<a href= '#' onclick='termin($idTer)' ><p style='color:blue'>uradjeno</p></a>";
                                 } else if ($status == 'z') {
                                     echo '<p style="color:green">'.'zakazano'.'</p>';
                                 } else if ($status == 'o') {
                                     echo '<p style="color:red">'.'otkazano'.'</p>';
                                 }
                                 ?></td>
-                            <td><?php echo $naziv ?></td>
-                            <td><?php echo $cena ?></td>
+                           
                         </tr>
 <?php } ?>
 
                 </tbody>
             </table>
+            <div id="usluge"></div>
+        </div>
+    </div>
+</div>
+<script>
+               function termin(idTer) {
+               
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                document.getElementById('usluge').innerHTML = (this.responseText);
+                 }
+                };
+                xmlhttp.open("GET", "<?php echo site_url('User/usluge') ?>?idTer=" +idTer, true);
+                xmlhttp.send();
+           
+            } 
+            
+            function otkazi(idTer) {
+               
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                };
+                xmlhttp.open("GET", "<?php echo site_url('User/otkazTermina') ?>?idTer=" +idTer, true);
+                xmlhttp.send();
+           
+            } 
 
 
-
+           </script>
         </div>
     </div>
 </div>

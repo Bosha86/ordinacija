@@ -20,13 +20,27 @@ class User extends CI_Controller {
     public function index(){
         
         $idKor = $this->session->userdata('user')['idKor'];
+        $idTer = $this->input->get('idTer');
         $data['middle'] = 'middle/pocetna';
-        $data['middle_data'] = ['prethodneUsluge' => $this->UserModel->prethodneUsluge($idKor)];
+        $data['middle_data'] = ['termini' => $this->UserModel->termini($idKor),
+                                'usluge' => $this->UserModel->usluge($idKor, $idTer)];
         $this->load->view('viewTemplate', $data);
     }
     
-    public function logout(){
+    public function usluge(){
+        
+        
+       $idKor = $this->session->userdata('user')['idKor'];
+       $idTer = $this->input->get('idTer');
+       $usluge = $this->UserModel->usluge($idKor, $idTer);
+       $this->load->view('middle/usluge', ['usluge' => $usluge]);
+        
+        
+    }
+        public function logout(){
           $this->session->sess_destroy();
           redirect("Login");
       }
+      
+      
 }
