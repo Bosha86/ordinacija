@@ -1,7 +1,6 @@
 <div>
     <?php echo '..   ' ?>        
 </div>
-
 <?php
 $user = $this->session->userdata('user');
 $korisnicko = $user['korisnicko'];
@@ -86,9 +85,13 @@ $rodjendan = $user['rodjen'];
                             <td><?php echo $usluga ?></td>
                             <td><?php
                                 if ($status == 'u') {
-                                    echo "<a href= '#' onclick='termin($idTer)' ><p style='color:blue'>uradjeno</p></a>";
+
+
+                                    echo "<a href= '#' onmouseover='termin($idTer)' ><p style='color:blue'>uradjeno</p></a>";
+
                                 } else if ($status == 'z') {
-                                    echo '<p style="color:green">'.'zakazano'.'</p>';
+                                    echo '<p style="color:green">'.'zakazano'.'</p>'
+                                             ."<a href= '#' onclick='otkazi($idTer); window.location.reload() '><p style='color:lightgreen'>otkaži</p></a>";
                                 } else if ($status == 'o') {
                                     echo '<p style="color:red">'.'otkazano'.'</p>';
                                 }
@@ -100,12 +103,11 @@ $rodjendan = $user['rodjen'];
                 </tbody>
             </table>
             <div id="usluge"></div>
+
         </div>
     </div>
 </div>
 <script>
-
-
                function termin(idTer) {
                
                 xmlhttp = new XMLHttpRequest();
@@ -118,6 +120,20 @@ $rodjendan = $user['rodjen'];
                 xmlhttp.send();
            
             } 
+            
+            function otkazi(idTer) {
+               
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                };
+                xmlhttp.open("GET", "<?php echo site_url('User/otkazTermina') ?>?idTer=" +idTer, true);
+                xmlhttp.send();
+           
+            } 
 
 
-</script>
+           </script>
+
+        </div>
+    </div>
+</div>
