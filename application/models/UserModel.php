@@ -66,5 +66,14 @@ class UserModel extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
+    
+    public function otkazTermina($idKor, $idTer){
+        
+        $this->db->set('termin.stanje', 'o')
+                ->from('termin')
+                ->where('termin.idKor', $idKor)
+                ->where('termin.idTer', $idTer);
+        $this->db->update();
+    }
 }
 

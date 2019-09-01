@@ -37,7 +37,16 @@ class User extends CI_Controller {
         
         
     }
-        public function logout(){
+    
+    public function otkazTermina(){
+        
+       $idKor = $this->session->userdata('user')['idKor'];
+       $idTer = $this->input->get('idTer');
+       $this->UserModel->otkazTermina($idKor, $idTer);
+       redirect('User');
+    }
+
+    public function logout(){
           $this->session->sess_destroy();
           redirect("Login");
       }
