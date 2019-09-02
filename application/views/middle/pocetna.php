@@ -51,6 +51,8 @@ $rodjendan = $user['rodjen'];
                     </tbody>
                 </table>
             </div>
+            <a href="<?php echo site_url('Rezervacija/index') ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Rezervisi termin</a>
+            
         </div>
         <div class="col-6 col-sm">
 
