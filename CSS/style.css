@@ -1,0 +1,128 @@
+#header { 
+	background:#894186;
+	border-radius: 15px;
+	
+	height:80px;
+	padding:20px 20px 20px 80px;
+
+}
+.logo { 
+	float:right;
+	padding: 0px 50px 0px 0px;
+}
+#nav { 
+	float:left;
+}
+#nav ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#nav ul li {
+	float:right;
+}
+
+.wrapper { 
+	background:url(images/sajt_unident_pro.jpg) center center repeat fixed;
+	width:100%;
+	margin:6px 1px 6px 0;
+	overflow:hidden;
+	border: 2px solid #894186;
+    border-radius: 15px;
+}
+
+
+.dugme {
+	background: rgba(9, 65, 201, 0);
+    border: 2px solid #894186;
+    border-radius: 15px;
+    color: #894186;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding: 14px 28px 13px;
+	margin:20px 5px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.dugme:hover {
+	background: rgba(9, 65, 201, 1);
+	color:#fff;
+}
+.negativ { 
+	color:#fff;
+}
+.negativ a:link,
+.negativ a:visited { 
+	color:#FFF;
+	text-decoration:none;
+}
+.negativ a:hover {color:#FFF;
+}
+
+.negativ .dugme {
+    border: 2px solid #FFF;
+    color: #FFF;
+}
+
+.negativ .dugme:hover {
+	background: rgba(255, 255, 255, 1);
+    color: #895286;
+}
+
+#section {
+	padding:30px 0;
+	text-align:center;
+	overflow:hidden;
+}
+
+.article {
+	background: #FFF;
+	width:25%;
+	height:300px;
+	border: 2px solid #894186;
+	border-radius: 15px;
+	position:relative;
+	text-align:center;
+	overflow:hidden;
+	margin:30px 65px 0 80px;
+	float:left;
+}
+
+.article:nth-of-type(3n) {
+	margin-right:0;
+}
+
+.text {
+	position:absolute;
+	left:0;
+	top:350px;
+	padding:90px;
+	width:300px;
+	height:250px;
+	background:rgba(255,255,255,0.3);
+    transition: all 0.6s ease;
+}
+
+.article:hover .text {
+	top:0;
+	background:rgba(255,255,255,0.6);
+}
+
+#footer {
+	background:#894186;
+	padding:20px 0;
+       margin-top: 300px;
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+	border-radius: 15px;
+	text-align:center;
+	font-size:18px;
+       
+}
