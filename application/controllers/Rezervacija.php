@@ -35,10 +35,16 @@ class Rezervacija extends CI_Controller {
         $idDok = $this->input->post('idDok');
         $idUsl = $this->input->post('idUsl');
         $this->output->enable_profiler(false);
+        $proveraTermina = $this->RezervacijaModel->proveraTermina($datum, $vreme);
+        if($proveraTermina == true){
         $this->RezervacijaModel->rezervacija($datum, $vreme, $idKor, $idDok, $idUsl);
         
             redirect('User/index');
-        
+        }  else {
+            
+            $this->session->set_flashdata('zauzeto',  'Termin je zauzet. Molimo, izaberite drugi termin.');
+            redirect('Rezervacija/index');
+        }
     }
     
     
