@@ -44,6 +44,8 @@ $usluge = $this->RezervacijaModel->dohvatiUsluge();
            </div>
 
         </div>
-
+    <?php if ($this->session->flashdata('zauzeto')) { ?>
+    <div class="alert alert-warning"> <?= $this->session->flashdata('zauzeto') ?> </div>
+<?php } ?>
 </div>
 </form>

@@ -25,12 +25,23 @@ class RezervacijaModel extends CI_Model {
     
     public function dohvatiUsluge(){
         
-        
-       
         $query = $this->db->get('usluge');
         return $query->result_array();
                 
     }
     
+    public function proveraTermina($rezDatum, $rezVreme){
+        
+       $query = $this->db->select('datum, vreme')
+                ->from('termin')
+                ->where('datum', $rezDatum)
+                ->where('vreme', $rezVreme)
+                ->get();
+        if($query->num_rows() >= 1){
+            return false;
+        } else {
+            return true;
+        }
+    }
     
 }
