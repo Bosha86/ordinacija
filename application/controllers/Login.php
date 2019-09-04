@@ -13,6 +13,7 @@ class Login extends CI_Controller {
         $this->load->model('UserModel');
     }
 
+
     public function index() {
 
         $data['middle'] = 'middle/login';

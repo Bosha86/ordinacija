@@ -87,7 +87,10 @@ $rodjendan = $user['rodjen'];
                             <td><?php echo $usluga ?></td>
                             <td><?php
                                 if ($status == 'u') {
+
+
                                     echo "<a href= '#' onmouseover='termin($idTer)' ><p style='color:blue'>uradjeno</p></a>";
+
                                 } else if ($status == 'z') {
                                     echo '<p style="color:green">'.'zakazano'.'</p>'
                                              ."<a href= '#' onclick='otkazi($idTer); window.location.reload() '><p style='color:lightgreen'>otkaži</p></a>";
@@ -102,6 +105,7 @@ $rodjendan = $user['rodjen'];
                 </tbody>
             </table>
             <div id="usluge"></div>
+
         </div>
     </div>
 </div>
@@ -131,6 +135,7 @@ $rodjendan = $user['rodjen'];
 
 
            </script>
+
         </div>
     </div>
 </div>

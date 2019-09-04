@@ -41,21 +41,21 @@ class UserModel extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
-    
-    public function termini($idKor){
-        
+
+    public function termini($idKor) {
+
         $this->db->select('termin.datum, termin.vreme, termin.stanje, termin.idTer, usluge.naziv')
                 ->from('termin')
                 ->join('korisnik', 'korisnik.idKor = termin.idKor')
                 ->join('usluge', 'usluge.idUsl = termin.idUsl')
                 ->where('korisnik.idKor', $idKor);
-              
-          $query = $this->db->get();
-          return $query->result_array();
-               
+
+        $query = $this->db->get();
+        return $query->result_array();
     }
-    public function usluge($idKor, $idTer){
-        
+
+    public function usluge($idKor, $idTer) {
+
         $this->db->select('termin.datum, usluge.naziv, usluge.cena')
                 ->from('radjeno')
                 ->join('usluge', 'usluge.idUsl = radjeno.idUsl')
@@ -66,14 +66,14 @@ class UserModel extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
-    
-    public function otkazTermina($idKor, $idTer){
-        
+
+    public function otkazTermina($idKor, $idTer) {
+
         $this->db->set('termin.stanje', 'o')
                 ->from('termin')
                 ->where('termin.idKor', $idKor)
                 ->where('termin.idTer', $idTer);
         $this->db->update();
     }
-}
 
+}

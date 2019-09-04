@@ -37,7 +37,7 @@ class User extends CI_Controller {
         
         
     }
-    
+
     public function otkazTermina(){
         
        $idKor = $this->session->userdata('user')['idKor'];
@@ -47,6 +47,7 @@ class User extends CI_Controller {
     }
 
     public function logout(){
+
           $this->session->sess_destroy();
           redirect("Login");
       }
