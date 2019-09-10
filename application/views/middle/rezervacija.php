@@ -4,7 +4,7 @@ $usluge = $this->RezervacijaModel->dohvatiUsluge();
 
 ?>
 
-<div class="col-md-10 offset-2">
+<div class="col-md-10 offset-2" id="rezervacija">
 <form name="rezervisi" method="POST" action="<?php echo site_url('Rezervacija/rezervacija')?>">
     
      <div class="row">
