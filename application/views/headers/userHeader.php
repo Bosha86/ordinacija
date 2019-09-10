@@ -9,28 +9,31 @@
     </head>
 
    <body>
-        <header id="header" class="negativ">
-            
-	    
-	    <div>
-                 <img src="<?php echo base_url();?>images/logo_header.png" alt="logo" class="logo">
-	            
-                                                
-	            
-	        <nav id="nav">
-	            <ul>
-                        <li><a href="<?php echo site_url('User/logout')?>" class="dugme">Izloguj se</a></li>
-                        <li><a href="#" class="dugme">Kontakt</a></li>
-	                <li><a href="#" class="dugme">Cenovnik</a></li>
-	                <li><a href="#" class="dugme">Galerija</a></li>
-	                <li><a href="#" class="dugme">O nama</a></li>
-  			<li><a href="<?php echo site_url('User/index')?>" class="dugme">Pocetna</a></li>
-	            </ul>
-                </nav> 
-                  
-	    
-          
-       </div>
-        </header>    
+        <nav class="navbar navbar-expand-lg negativ" id="header">
+            <div class="collapse navbar-collapse" id="nav">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link dugme" href="<?php echo site_url('User/logout')?>" class="dugme">Izloguj se</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link dugme" href="">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link dugme" href="">Cenovnik</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link dugme" href="">Galerija</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link dugme" href="">O nama</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link dugme" href="<?php echo site_url('Login')?>">Pocetna</a>
+                </li>
+              </ul>   
+	    <div>   
+        </div>
+        <div class="navbar-brand"><img id="brand-image" src="<?php echo base_url()?>images/logo_header.png" alt="logo" class="logo"></div>
+    </nav>  
     
-  
+    
