@@ -41,19 +41,39 @@ class UserModel extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
-    
-    public function prethodneUsluge($idKor){
-        
-        $this->db->select('termin.datum, termin.vreme, termin.stanje, usluge.naziv, usluge.cena')
+
+    public function termini($idKor) {
+
+        $this->db->select('termin.datum, termin.vreme, termin.stanje, termin.idTer, usluge.naziv')
                 ->from('termin')
-                ->join('uradjeno', 'uradjeno.idTer = termin.idTer')
-                ->join('usluge', 'usluge.idUsl = uradjeno.idUsl')
                 ->join('korisnik', 'korisnik.idKor = termin.idKor')
+                ->join('usluge', 'usluge.idUsl = termin.idUsl')
                 ->where('korisnik.idKor', $idKor);
-              
-          $query = $this->db->get();
-          return $query->result_array();
-               
+
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function usluge($idKor, $idTer) {
+
+        $this->db->select('termin.datum, usluge.naziv, usluge.cena')
+                ->from('radjeno')
+                ->join('usluge', 'usluge.idUsl = radjeno.idUsl')
+                ->join('korisnik', 'korisnik.idKor = radjeno.idKor')
+                ->join('termin', 'radjeno.idTer = termin.idTer')
+                ->where('korisnik.idKor', $idKor)
+                ->where('termin.idTer', $idTer);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function otkazTermina($idKor, $idTer) {
+
+        $this->db->set('termin.stanje', 'o')
+                ->from('termin')
+                ->where('termin.idKor', $idKor)
+                ->where('termin.idTer', $idTer);
+        $this->db->update();
     }
 
 }
