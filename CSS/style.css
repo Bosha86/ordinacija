@@ -2,8 +2,8 @@
 	background:#894186;
 	border-radius: 15px;
 	
-	height:80px;
-	padding:20px 20px 20px 80px;
+	height:100px;
+	padding:20px 20px 20px 20px;
 
 }
 .logo { 
@@ -22,13 +22,14 @@
 	float:right;
 }
 
-.wrapper { 
-	background:url(images/sajt_unident_pro.jpg) center center repeat fixed;
-	width:100%;
-	margin:6px 1px 6px 0;
+.container { 
+    background-image: url('../images/sajt_unident_pro.jpg');
+/*	background:url(images/sajt_unident_pro.jpg) center center repeat fixed;*/
+        max-width: 100% !important;
+        margin:0;
 	overflow:hidden;
 	border: 2px solid #894186;
-    border-radius: 15px;
+        border-radius: 15px;
 }
 
 
@@ -73,7 +74,7 @@
     color: #895286;
 }
 
-#section {
+#prviRed {
 	padding:30px 0;
 	text-align:center;
 	overflow:hidden;
@@ -81,30 +82,32 @@
 
 .article {
 	background: #FFF;
-	width:25%;
+	width: 40;
 	height:300px;
 	border: 2px solid #894186;
 	border-radius: 15px;
 	position:relative;
 	text-align:center;
 	overflow:hidden;
-	margin:30px 65px 0 80px;
+	margin: 5px 5px 5px 5px;
 	float:left;
+        
 }
 
 .article:nth-of-type(3n) {
 	margin-right:0;
+        
 }
 
 .text {
 	position:absolute;
 	left:0;
 	top:350px;
-	padding:90px;
-	width:300px;
-	height:250px;
+	padding:40px;
+	width:340px;
+	height:300px;
 	background:rgba(255,255,255,0.3);
-    transition: all 0.6s ease;
+        transition: all 0.6s ease;
 }
 
 .article:hover .text {
@@ -115,7 +118,7 @@
 #footer {
 	background:#894186;
 	padding:20px 0;
-       margin-top: 300px;
+        margin-top: 5px;
         position: relative;
         right: 0;
         bottom: 0;
@@ -124,5 +127,18 @@
 	border-radius: 15px;
 	text-align:center;
 	font-size:18px;
+        z-index: 999;
        
+}
+
+#reg{
+    padding-bottom: 95px;
+}
+
+#pocetnaUser{
+    padding-bottom: 20px;
+}
+
+#rezervacija{
+    padding-bottom: 235px;
 }

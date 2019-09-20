@@ -2,7 +2,7 @@
 <?php echo '..' ?>
 
 
-<div class="col-md-10 offset-2">
+<div class="col-md-10 offset-2" id="reg">
 
     <form name="registracija" method="POST" action="<?php echo site_url('Registracija/regKor') ?>" >
 
@@ -29,6 +29,6 @@
             </div>
 
         </div>
-
+    </form>
 </div>
-</form>
+
