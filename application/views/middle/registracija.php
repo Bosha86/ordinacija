@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php echo '..' ?>
 
 
 <div class="col-md-10 offset-2" id="reg">

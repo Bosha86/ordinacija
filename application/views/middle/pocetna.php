@@ -1,6 +1,6 @@
-<div>
-    <?php echo '..   ' ?>        
-</div>
+<!--<div>
+    <?php //echo '..   ' ?>        
+</div>-->
 <?php
 $user = $this->session->userdata('user');
 $korisnicko = $user['korisnicko'];
@@ -11,7 +11,7 @@ $tel = $user['telefon'];
 $rodjendan = $user['rodjen'];
 ?>
 <div class="container" id="pocetnaUser">
-
+    <a href="<?php echo site_url('Kalendar/show')?>">Kalendar</a>
     <div class="row">
         <div class="col-6 col-sm">
             <h5> Dobrodosao/la,   <?php echo $korisnicko ?> </h5>

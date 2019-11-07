@@ -1,5 +1,5 @@
 <?php
-echo '.. ';
+//echo '.. ';
 $usluge = $this->RezervacijaModel->dohvatiUsluge();
 
 ?>
@@ -49,3 +49,22 @@ $usluge = $this->RezervacijaModel->dohvatiUsluge();
 <?php } ?>
 </div>
 </form>
+    Oktobar 2019 <button onclick="sledeciMesec">Sledeci</button>
+    <div id="kalendar">
+    <?php echo $kalendar; ?>
+    </div>
+    
+    <script>
+         function sledeciMesec() {
+               
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                document.getElementById('kalendar').innerHTML = (this.responseText);
+                 }
+                };
+                xmlhttp.open("GET", "<?php echo site_url('Rezervacije/draw_calendar') ?>?mesec=" +mesec, true);
+                xmlhttp.send();
+           
+            } 
+        </script>
