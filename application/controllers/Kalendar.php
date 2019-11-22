@@ -26,7 +26,7 @@ class Kalendar extends CI_Controller {
         $year  = null;
          
         $month = null;
-         
+        
         if(null==$year&&isset($_GET['year'])){
  
             $year = $_GET['year'];
@@ -37,7 +37,7 @@ class Kalendar extends CI_Controller {
          
         }          
          
-        if(null==$month&&isset($_GET['month'])){
+         if(null==$month&&isset($_GET['month'])){
  
             $month = $_GET['month'];
          
@@ -46,12 +46,19 @@ class Kalendar extends CI_Controller {
             $month = date("m",time());
          
         }                  
-         
+      
+//        $param = $this->input->get('param');
+//        if($param !== null){
+//            $res = $this->promeniMesec($param);
+////            var_dump($res);
+//        }
         $this->currentYear=$year;
          
         $this->currentMonth=$month;
          
         $this->daysInMonth=$this->_daysInMonth($month,$year);  
+        
+       
          
         $content='<div id="calendar">'.
                         '<div class="box">'.
@@ -80,10 +87,15 @@ class Kalendar extends CI_Controller {
                  
         $content.='</div>';
         
+//        if($this->input->get('year')!== null || $this->input->get('month')!== null){
+//            return $content;
+//        }else{
+        
         $data['middle'] = "middle/kalendar";
         $data['middle_data'] = ["kalendar" => $content];
         $this->load->view('viewTemplate', $data);
 //        return $content;   
+//        }
     }
      
     /********************* PRIVATE **********************/ 
@@ -124,7 +136,7 @@ class Kalendar extends CI_Controller {
              
          
         return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
-                ($cellContent==null?'mask':'').($this->currentDate == date('Y-m-d')?'danas':''). '" onclick="prikaziDan('.$this->currentDate.')">'.$cellContent.'</li>';
+                ($cellContent==null?'mask':'').($this->currentDate == date('Y-m-d')?'danas':''). '" onclick="prikaziDan(\''.$this->currentDate.'\')">'.$cellContent.'</li>';
     }
      
     /**
@@ -139,18 +151,66 @@ class Kalendar extends CI_Controller {
         $preMonth = $this->currentMonth==1?12:intval($this->currentMonth)-1;
          
         $preYear = $this->currentMonth==1?intval($this->currentYear)-1:$this->currentYear;
-         
+        
+
+//        return
+//        
+//            '<div class="header">'.
+//                '<a class="prev" href="#" onclick="promeni(\'pret\')">Prethodni</a>'.
+//                    '<span class="title">'.date('Y M',strtotime($this->currentYear.'-'.$this->currentMonth.'-1')).'</span>'.
+//                '<a class="next" href="#" onclick="promeni(\'sled\')">Sledeći</a>'.
+//            '</div>';
+        
         return
             '<div class="header">'.
                 '<a class="prev" href="'.$this->naviHref.'?month='.sprintf('%02d',$preMonth).'&year='.$preYear.'">Prethodni</a>'.
                     '<span class="title">'.date('Y M',strtotime($this->currentYear.'-'.$this->currentMonth.'-1')).'</span>'.
                 '<a class="next" href="'.$this->naviHref.'?month='.sprintf("%02d", $nextMonth).'&year='.$nextYear.'">Sledeći</a>'.
             '</div>';
+        
     }
          
     /**
     * create calendar week labels
     */
+    
+    public function promeniMesec(){
+//        
+//        $nextMonth = $this->currentMonth==12?1:intval($this->currentMonth)+1;
+////        $nextMonthTrue = sprintf("%02d", $nextMonth);
+//         
+//        $nextYear = $this->currentMonth==12?intval($this->currentYear)+1:$this->currentYear;
+//         
+//        $preMonth = $this->currentMonth==1?12:intval($this->currentMonth)-1;
+////        $preMonthTrue = sprintf('%02d',$preMonth);
+//         
+//        $preYear = $this->currentMonth==1?intval($this->currentYear)-1:$this->currentYear;
+//        
+//        var_dump($nextMonth);
+//        var_dump($preMonth);
+        
+//        $param = $this->input->get('param');
+//        
+//        if($param == "pret"){
+//            $res = array ($preMonth, $preYear);
+//            var_dump($res);
+            
+//            redirect("Kalendar/show?month=$preMonthTrue&year=$preYear");
+//            redirect("Kalendar/show")."?month=".$preMonthTrue;
+//        }else if($param == "sled"){
+//            return array($nextMonth, $nextYear);
+//            redirect("Kalendar/show?month=$nextMonthTrue&year=$nextYear");
+//        }
+           
+         
+//        return
+//            '<div class="header">'.
+//                '<a class="prev" href="'.$this->naviHref.'?month='.sprintf('%02d',$preMonth).'&year='.$preYear.'">Prethodni</a>'.
+//                    '<span class="title">'.date('Y M',strtotime($this->currentYear.'-'.$this->currentMonth.'-1')).'</span>'.
+//                '<a class="next" href="'.$this->naviHref.'?month='.sprintf("%02d", $nextMonth).'&year='.$nextYear.'">Sledeći</a>'.
+//            '</div>';
+    }
+            
     private function _createLabels(){  
                  
         $content='';
@@ -210,6 +270,6 @@ class Kalendar extends CI_Controller {
              
         return date('t',strtotime($year.'-'.$month.'-01'));
     }
-     
+        
 }
 

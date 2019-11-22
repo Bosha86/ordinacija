@@ -22,6 +22,7 @@ class Rezervacija extends CI_Controller {
     public function index() {
         
         $data['middle'] = 'middle/rezervacija';
+        $data['middle_data'] = ['usluge' => $this->RezervacijaModel->dohvatiUsluge()];
        
         $this->load->view('viewTemplate', $data);
     }
@@ -47,6 +48,35 @@ class Rezervacija extends CI_Controller {
         }
     }
     
+    public function prikaziTermine(){
+        $datum = $this->input->get('datum');
+        $doktor = $this->input->get('doktor');
+//        $zauzetiTermini = $this->RezervacijaModel->zauzetiTermini($doktor, $datum);
+//        $doktori = $this->RezervacijaModel->dohvatiDoktore();
+        
+        $data = ["zauzetiTermini" => $this->RezervacijaModel->zauzetiTermini($doktor, $datum),
+                 "doktori" => $this->RezervacijaModel->dohvatiDoktore(),
+                 "sati" => $this->get_hours_range(),
+                 "datum" => $datum];
+        $this->load->view('termini', $data);
+        
+    }
     
+//    public function dohvatiSate($start, $end, $step, $format = 'g:i:s'){
+//        $sati = array();
+//        
+//    }
+    
+    
+    function get_hours_range( $start = 32400, $end = 68400, $step = 1800, $format = 'H:i:s' ) {
+        $times = array();
+        foreach ( range( $start, $end, $step ) as $timestamp ) {
+                $hour_mins = gmdate( 'H:i', $timestamp );
+                if ( ! empty( $format ) )
+                        $times[$hour_mins] = gmdate( $format, $timestamp );
+                else $times[$hour_mins] = $hour_mins;
+        }
+        return $times;
+}
 
 }

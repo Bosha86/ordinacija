@@ -44,4 +44,20 @@ class RezervacijaModel extends CI_Model {
         }
     }
     
+    public function zauzetiTermini($doktor, $datum){
+        $this->db->select('vreme');
+        $this->db->where('datum', $datum);
+        $this->db->where('idDok', $doktor);
+        $this->db->where('stanje', 'z');
+        $this->db->from('termin');
+        $query=$this->db->get();
+        return $query->result_array();
+        
+    }
+    
+    public function dohvatiDoktore(){
+        $query = $this->db->get('doktor');
+        return $query->result_array();
+    }
+    
 }

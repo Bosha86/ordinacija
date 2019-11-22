@@ -9,9 +9,11 @@ $prezime = $user['prezime'];
 $email = $user['email'];
 $tel = $user['telefon'];
 $rodjendan = $user['rodjen'];
+$month = date("m",time());
+$year = date("Y",time()); 
 ?>
 <div class="container" id="pocetnaUser">
-    <a href="<?php echo site_url('Kalendar/show')?>">Kalendar</a>
+<!--    <a href='<?php echo site_url("Kalendar/show")?>'>Kalendar</a>-->
     <div class="row">
         <div class="col-6 col-sm">
             <h5> Dobrodosao/la,   <?php echo $korisnicko ?> </h5>
