@@ -14,14 +14,17 @@ foreach ($zauzetiTermini as $termin){
     <div class="lekar">
     Odaberite lekara: 
     
-    <select class="select-doktor">
+    <select class="select-doktor" id="doktor" onchange="prikaziDan('<?php echo $datum?>')">
         <?php
         foreach ($doktori as $doktor){
             $id = $doktor['idDok'];
             $ime = $doktor['ime'];
             $prezime = $doktor['prezime'];
-            echo "<option value='$id'>$ime"." "."$prezime</option>";
-            
+            if($id == $odabraniDoktor){
+                echo "<option value='$id' selected>$ime"." "."$prezime</option>";
+            }else{
+                echo "<option value='$id'>$ime"." "."$prezime</option>";
+            }   
         }
         ?>
     </select>
@@ -50,6 +53,6 @@ foreach ($zauzetiTermini as $termin){
 <!--    </ul>-->
     </div>
     <div class="zakazi-dugme-div">
-        <button class="zakazi-dugme" onclick="zakaziTermin()">Zakaži</button>
+        <button class="zakazi-dugme" onclick="zakaziTermin('<?php echo $datum?>')">Zakaži</button>
     </div>
 </div>

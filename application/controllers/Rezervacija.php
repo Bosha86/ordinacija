@@ -27,25 +27,21 @@ class Rezervacija extends CI_Controller {
         $this->load->view('viewTemplate', $data);
     }
     
-    public function rezervacija(){
+    public function rezervisi(){
+        
+        $vremeUkupno = (explode(':', $this->input->post('termin')));
+        $sat = $vremeUkupno[0];
+        $minut = $vremeUkupno[1];
+        
         
         $datum = date("Y-m-d", strtotime($this->input->post('datum')));
-        $vreme = date("H:i:s", mktime($this->input->post('vreme'),0,0));
+        $vreme = date("H:i:s", mktime($sat, $minut,0,0));
        
         $idKor = $this->session->userdata('user')['idKor'];
-        $idDok = $this->input->post('idDok');
-        $idUsl = $this->input->post('idUsl');
-        $this->output->enable_profiler(false);
-        $proveraTermina = $this->RezervacijaModel->proveraTermina($datum, $vreme);
-        if($proveraTermina == true){
-        $this->RezervacijaModel->rezervacija($datum, $vreme, $idKor, $idDok, $idUsl);
-        
-            redirect('User/index');
-        }  else {
-            
-            $this->session->set_flashdata('zauzeto',  'Termin je zauzet. Molimo, izaberite drugi termin.');
-            redirect('Rezervacija/index');
-        }
+        $idDok = $this->input->post('doktor');
+        $idUsl = $this->input->post('usluga');
+        $this->RezervacijaModel->rezervacija($datum, $vreme, $idKor, $idDok, $idUsl);  
+        echo "Uspešno ste zakazali termin za ".date("d.m.Y", strtotime($this->input->post('datum')))." u ".$this->input->post('termin')." časova";
     }
     
     public function prikaziTermine(){
@@ -56,6 +52,7 @@ class Rezervacija extends CI_Controller {
         
         $data = ["zauzetiTermini" => $this->RezervacijaModel->zauzetiTermini($doktor, $datum),
                  "doktori" => $this->RezervacijaModel->dohvatiDoktore(),
+                 "odabraniDoktor" => $doktor,
                  "sati" => $this->get_hours_range(),
                  "datum" => $datum];
         $this->load->view('termini', $data);

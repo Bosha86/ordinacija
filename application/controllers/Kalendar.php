@@ -22,7 +22,7 @@ class Kalendar extends CI_Controller {
     /**
     * print out the calendar
     */
-    public function show() {
+    public function show($usluga, $naziv) {
         $year  = null;
          
         $month = null;
@@ -92,7 +92,9 @@ class Kalendar extends CI_Controller {
 //        }else{
         
         $data['middle'] = "middle/kalendar";
-        $data['middle_data'] = ["kalendar" => $content];
+        $data['middle_data'] = ["kalendar" => $content,
+                                "usluga" => $usluga,
+                                "naziv" => $naziv];
         $this->load->view('viewTemplate', $data);
 //        return $content;   
 //        }
@@ -164,7 +166,7 @@ class Kalendar extends CI_Controller {
         return
             '<div class="header">'.
                 '<a class="prev" href="'.$this->naviHref.'?month='.sprintf('%02d',$preMonth).'&year='.$preYear.'">Prethodni</a>'.
-                    '<span class="title">'.date('Y M',strtotime($this->currentYear.'-'.$this->currentMonth.'-1')).'</span>'.
+                    '<span class="title">'.date('F Y',strtotime($this->currentYear.'-'.$this->currentMonth.'-1')).'</span>'.
                 '<a class="next" href="'.$this->naviHref.'?month='.sprintf("%02d", $nextMonth).'&year='.$nextYear.'">Sledeći</a>'.
             '</div>';
         

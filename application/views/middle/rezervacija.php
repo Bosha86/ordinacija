@@ -11,7 +11,7 @@
     ?>
     <div class="slika-div">
     <img src="<?php echo base_url().'/usluge/'.$slika?>" class="usluga-slika">
-    <a href='<?php echo site_url("Kalendar/show")?>'>
+    <a href='<?php echo site_url("Kalendar/show/$idUsl/$naziv")?>'>
         <div class="slika-hover">
             <span class="usluga-naziv"><?php echo $naziv; ?></span>
         </div>
