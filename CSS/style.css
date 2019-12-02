@@ -1,5 +1,5 @@
 #header { 
-	background:#894186;
+	background: #809fff;
 /*	border-radius: 15px;*/
 	
 	height:100px;
@@ -25,8 +25,8 @@
 .container { 
 /*    background-image: url('../images/sajt_unident_pro.jpg');*/
 /*	background:url(images/sajt_unident_pro.jpg) center center repeat fixed;*/
-        max-width: 100% !important;
-        margin:0;
+/*        max-width: 100% !important;
+        margin:0;*/
 	overflow:hidden;
 /*	border: 2px solid #894186;*/
 /*        border-radius: 15px;*/
@@ -116,9 +116,8 @@
 }
 
 #footer {
-	background:#894186;
+	background:#809fff;
 	padding:20px 0;
-        margin-top: 5px;
         position: relative;
         right: 0;
         bottom: 0;
@@ -132,8 +131,23 @@
 }
 
 #reg{
-    padding-top: 70px;
-    min-height: calc(100% - 188px);
+/*    padding-top: 70px;*/
+}
+
+.registracija-pozadina{
+    min-height: calc(100vh - 183px);
+    background-image: url('../images/pozadina.jpeg');
+    background-position: center;
+    background-size: cover; 
+}
+
+.reg-wrapper{
+       background-color: rgba(128, 159, 255, 0.5);
+       padding: 50px;
+}
+
+.reg-animacija{
+    animation: fade-in 1.4s;
 }
 
 #pocetnaUser{
@@ -147,9 +161,9 @@
     min-height: calc(100% - 188px);
 }
 
-body{
-    height: 100vh;
-}
+
+
+html,body{overflow-x: hidden;}
 
 /*KALENDAR*/
 
@@ -544,7 +558,7 @@ div.clear{
 
 .modal-header{
   padding: 2px 16px;
-  background-color: #894186;
+  background-color: #809fff;
   color: white;
 }
 
@@ -555,7 +569,7 @@ div.clear{
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #894186;
+  background-color: #809fff;
   color: white;
 }
 
@@ -563,4 +577,363 @@ div.clear{
     background-color: #fcf9fc !important;
     cursor: default !important;
 }
+.pocetna-slider{
+    padding: 0 !important;
+}
+
+.carousel-item{
+    height: 500px;
+    position: relative;
+}
+
+
+.carousel-item img {
+    opacity:1;
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}
+
+/*
+@-webkit-keyframes fade{
+    from {opacity:1}
+    to {opacity: 0.5}
+}*/
+
+.tekst{
+    position: absolute;
+    top: -20px;
+    left: -1000px;
+     -webkit-animation: right-to-left1 1s linear forwards;
+    animation: right-to-left1 1s linear forwards;
+}
+
+.carousel-caption h1{
+    font-size: 35px;
+    background-color: #809fff;
+    padding: 8px;
+}
+
+@-webkit-keyframes right-to-left1{
+    from {left: -1000px;}
+    to {left: 0px;}
+}
+
+.podtekst{
+    position: absolute;
+    top: -28px;
+    left: -1000px;
+     -webkit-animation: right-to-left1 1s linear forwards;
+    animation: right-to-left1 1s linear forwards;
+    animation-delay: 1.2s;
+}
+
+.carousel-caption p{
+    font-size: 20px;
+    background-color: #FFDA31;
+    padding: 5px;
+}
+
+.belo{
+    width: 10px;
+    background-color: white;
+}
+
+.dugme-vise{
+    width: 150px;
+    padding: 5px;
+    background-color: white;
+    color: #FFDA31;
+    border: 1px solid #FFDA31;
+    font-size: 1.1em;
+    opacity: 0;
+    position: absolute;
+    top: -35px;
+    left: 5px;
+    -webkit-animation: right-to-left2 1s linear forwards;
+    animation: right-to-left2 1s linear forwards;
+    animation-delay: 2.2s;
+}
+
+@-webkit-keyframes right-to-left2{
+    from {opacity: 0}
+    to {opacity: 100%}
+}
+
+.dugme-vise:focus{
+    border: 1px solid #FFDA31;
+    outline: none;
+}
+
+.dugme-vise:hover{
+    background-color: #FFDA31;
+    color: white;
+    text-decoration: none;
+}
+
+#carouselExampleIndicators{
+    margin-bottom: 3rem;
+}
+
+
+.btn-warning{
+    color: white !important;
+}
+
+.podnaslov{
+    margin-bottom: 4rem;
+}
+
+.parallax{
+    background-image: url('../images/ordinacija.jpg');
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+/*    opacity: 0.8;*/
+}
+
+.parallax-unutra{
+    min-height: 500px;
+    width: 100%;
+    background-color: rgba(128, 159, 255, 0.8);
+}
+
+.parallax-img{
+    max-height: 100px;
+}
+
+.parallax-pasus{
+    margin-top: 40px;
+}
+
+.parallax-btn-izgled{
+    max-width: 200px;
+}
+
+.card{
+    margin-left: 20px !important;
+    border-left: 1px solid rgba(0,0,0,.125) !important;
+}
+
+.card-body h6{
+    color: gray;
+}
+
+.card-body h3{
+    color: #809fff;
+}
+
+.card-body h3:hover{
+    color: gray;
+}
+
+.card-body h3:active{
+    color: #FFDA31;
+}
+
+.card-body a:hover{
+    text-decoration: none;
+}
+
+.doktori-pocetna{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.onlajn-zakazivanje{
+    padding: 0 !important;
+}
+
+.parallax1{
+    background-image: url('../images/instrumenti.jpg');
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax1-unutra{
+    min-height: 500px;
+    min-width: 50%;
+    background-color: rgba(128, 159, 255, 0.8);
+}
+
+
+@keyframes fade-in {
+    from {opacity: 0; transform: scale(.7,.7)}
+    to {opacity: 1;}
+}
+
+.fade-in-element-naslov {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    animation: fade-in 1.4s;
+    color: white;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.parallax1-img{
+    max-height: 40px;
+    max-width: 40px;
+    padding: 0;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.grafika-korak{
+    border: 2px solid white;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 0 !important;
+    border-left: none;
+    margin-top: 10px;
+    position: relative;
+/*    max-width: 400px !important;*/
+}
+
+.grafika-korak-desno{
+    border: 2px solid white;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 0 !important;
+    border-right: none;
+    margin-top: 10px;
+}
+
+.broj-korak{
+    position: relative;
+    display: inline;
+    border: 2px solid white;
+    border-radius: 100%;
+    float: left;
+    height: 70px;
+    width: 70px;
+}
+
+.broj-korak-desno{
+    position: relative;
+    display: inline;
+    border: 2px solid white;
+    border-radius: 100%;
+    float: right;
+    height: 70px;
+    width: 70px;
+}
+
+.tekst-korak{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+}
+
+
+.tekst-korak-desno{
+    position: absolute;
+    top: 25%;
+    right: 30%;
+}
+
+.malo{
+    color: white;
+}
+
+.contact-us{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.btn-outline-warning:hover{
+    color: white !important;
+}
+
+.cenovnik{
+    padding: 0 120px;
+    margin: 50px 0;
+
+}
+
+.cenovnik-naslov{
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(128,159,255,1) 45%, rgba(255,255,255,1) 100%);
+    color: white;
+}
+
+.table-hover thead{
+    background-color: #809fff;
+    color: white;
+}
+
+.table-hover tbody{
+    background-color: #f2f5ff;
+}
+
+.table-hover{
+   margin-top: 30px; 
+}
+
+.oNama-zaglavlje{
+    background-image: url('../images/osmeh.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 150px;
+    padding: 0 !important;
+}
+
+.oNama-filter{
+    background-color: rgba(128, 159, 255, 0.4);
+    min-height: 150px;
+    width: 100%;
+}
+
+.oNama-sredina{
+    min-height: 500px;
+}
+
+.oNama-sredina p{
+    color: gray;
+}
+
+.oNama-slika{
+    float: left;
+    height: 200px !important;
+    margin-right: 10px;
+}
+
+.oNama-dole{
+/*    width: 30%;
+    margin-right: 20px;*/
+}
+
+.featurette-divider {
+  margin: 3rem 0; 
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+.ponuda-sredina{
+    color: gray;
+}
+
+
+
+
 

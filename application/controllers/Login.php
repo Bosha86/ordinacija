@@ -15,8 +15,12 @@ class Login extends CI_Controller {
 
 
     public function index() {
+        
+        $this->load->model("RezervacijaModel");
+        $usluge = $this->RezervacijaModel->dohvatiUsluge();
 
-        $data['middle'] = 'middle/login';
+        $data['middle'] = 'middle/guest';
+        $data['middle_data'] = ['usluge' => $usluge];
         $this->load->view('viewTemplate', $data);
     }
 
@@ -31,8 +35,9 @@ class Login extends CI_Controller {
             $this->UserModel->hashstored($username, $password);
         }
 
-        if (empty($users)) {
-            redirect("Login");
+        if (empty($users)) {      
+            $this->session->set_flashdata('log','false');
+            redirect('Login');
         } else {
             $korisnici = $this->UserModel->dohvatiKorisnika($username);
             $user = $korisnici[0];
@@ -41,5 +46,20 @@ class Login extends CI_Controller {
             redirect('User');
         }
     }
-
+    
+    public function oNama(){
+         $data['middle'] = 'middle/oNama';
+         $this->load->view('viewTemplate', $data);
+    }
+    
+    public function tim(){
+        $data['middle'] = 'middle/tim';
+        $this->load->view('viewTemplate', $data);
+    }
+    
+    public function usluge(){
+        $data['middle'] = 'middle/ponuda';
+        $this->load->view('viewTemplate', $data);
+    }
+    
 }

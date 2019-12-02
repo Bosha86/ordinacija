@@ -41,6 +41,7 @@ class Registracija extends CI_Controller {
         $this->form_validation->set_rules('rodjen', 'Datum rodjenja', 'required');
 
         if ($this->form_validation->run() == 0) {
+            $this->session->set_flashdata('reg', 'false');
             $this->index();
         } else {
 
@@ -56,6 +57,7 @@ class Registracija extends CI_Controller {
 
             $this->RegistracijaModel->dodajKorisnika($korisnicko, $lozinka, $ime, $prezime, $email, $telefon, $rodjen, $tip);
             $this->output->enable_profiler(false);
+            $this->session->set_flashdata('regPoruka', 'Uspesno ste se registrovali. Ulogujte se kako biste pristupili svom korisnickom profilu.');
             redirect('Login');
         }
     }
