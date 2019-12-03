@@ -13,9 +13,8 @@ $month = date("m",time());
 $year = date("Y",time()); 
 ?>
 <div class="container" id="pocetnaUser">
-<!--    <a href='<?php echo site_url("Kalendar/show")?>'>Kalendar</a>-->
     <div class="row">
-        <div class="col-6 col-sm">
+        <div class="col-6">
             <h5> Dobrodosao/la,   <?php echo $korisnicko ?> </h5>
             <div class="licniPodaci">
                 <table class="table table-bordered">
@@ -54,12 +53,14 @@ $year = date("Y",time());
                 </table>
             </div>
             <a href="<?php echo site_url('Rezervacija/index') ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Rezervisi termin</a>
+            <button class="btn btn-danger btn-lg float-right" id="dugmePrikazi">Moji termini</button>
+            <a href="<?php echo site_url('Rezervacija/posaljiMejl') ?>">Posalji mejl</a>
             
         </div>
-        <div class="col-6 col-sm">
-
+        <div class="col-6" id="termini">
             <h5>Termini</h5>
-            <table class="table table-bordered">
+          <div class="termini-unutra" id="skrol">
+            <table class="table table-bordered tabela-termini">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -106,10 +107,12 @@ $year = date("Y",time());
 
                 </tbody>
             </table>
-            <div id="usluge"></div>
-
+           
+            </div>
         </div>
     </div>
+    
+     <div id="usluge"></div>
 </div>
 <script>
                function termin(idTer) {
@@ -134,6 +137,12 @@ $year = date("Y",time());
                 xmlhttp.send();
            
             } 
+            
+            var terminiDiv = document.getElementById("termini");
+            var dugmePrikazi = document.getElementById("dugmePrikazi");
+            dugmePrikazi.onclick = function(){
+                terminiDiv.style.display = "block";
+            };
 
 
            </script>

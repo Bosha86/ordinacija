@@ -11,7 +11,7 @@ class Rezervacija extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-
+        
 
         if (!$this->session->has_userdata('user')) {
             redirect('Login');
@@ -38,10 +38,16 @@ class Rezervacija extends CI_Controller {
         $vreme = date("H:i:s", mktime($sat, $minut,0,0));
        
         $idKor = $this->session->userdata('user')['idKor'];
+        $ime = $this->session->userdata('user')['ime'];
+        $prezime = $this->session->userdata('user')['prezime'];
+        $mejl = $this->session->userdata('user')['email'];
         $idDok = $this->input->post('doktor');
         $idUsl = $this->input->post('usluga');
         $this->RezervacijaModel->rezervacija($datum, $vreme, $idKor, $idDok, $idUsl);  
-        echo "Uspešno ste zakazali termin za ".date("d.m.Y", strtotime($this->input->post('datum')))." u ".$this->input->post('termin')." časova";
+        $kod = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10);
+        $msg = "Poštovani/a $ime $prezime, uspešno ste zakazali termin u ordinaciji 'Unident PRO' za ".date("d.m.Y", strtotime($this->input->post('datum')))." u ".$this->input->post('termin')." časova. Vas jedinstveni kod je $kod.";
+        $this->posaljiMejl($mejl, $msg);
+        echo "Uspešno ste zakazali termin za ".date("d.m.Y", strtotime($this->input->post('datum')))." u ".$this->input->post('termin')." časova. Uskoto ce vam stici mejl.";
     }
     
     public function prikaziTermine(){
@@ -59,10 +65,7 @@ class Rezervacija extends CI_Controller {
         
     }
     
-//    public function dohvatiSate($start, $end, $step, $format = 'g:i:s'){
-//        $sati = array();
-//        
-//    }
+
     
     
     function get_hours_range( $start = 32400, $end = 68400, $step = 1800, $format = 'H:i:s' ) {
@@ -75,5 +78,27 @@ class Rezervacija extends CI_Controller {
         }
         return $times;
 }
+
+
+        public function posaljiMejl($mejl, $msg){
+        
+             $this->load->library('Phpmailer_lib');
+             $Mail = $this->phpmailer_lib->load();
+
+            $Mail->SMTPDebug = 0;
+            $Mail->Mailer = 'smtp';
+            $Mail->isSMTP();
+            $Mail->Host = "smtp.gmail.com";
+            $Mail->Port = 587;
+            $Mail->SMTPSecure = "tls";
+            $Mail->SMTPAuth = true;
+            $Mail->Username = "karijera.online@gmail.com";
+            $Mail->Password = "A123A123*";
+            $Mail->SetFrom("admin-karijera.online@gmail.com");
+            $Mail->Subject = 'Potvrda rezervacije termina';
+            $Mail->Body = $msg;
+            $Mail->AddAddress($mejl); 
+    }
+
 
 }

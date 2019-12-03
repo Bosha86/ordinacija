@@ -27,7 +27,6 @@ class Registracija extends CI_Controller {
         $this->form_validation->set_message('required', '{field} je obavezno polje');
         $this->form_validation->set_message('valid_email', 'E-mail adresa nije u ispravnom formatu');
         $this->form_validation->set_message('is_unique', 'Polje {field} mora biti jedinstveno.');
-        // $this->form_validation->set_message('regex_match', '{field} nije odgovarajuceg formata. ');
         $this->form_validation->set_message('matches', ' {field} i lozinka se ne poklapaju');
         $this->form_validation->set_message('min_length', '{field} mora da sadrzi najmanje {param} karaktera');     
 
@@ -96,6 +95,46 @@ class Registracija extends CI_Controller {
         }
         
         return true;
+        
+    }
+    
+     public function novaLozinka(){
+        $data['middle'] = 'middle/resetLozinke';
+        $this->load->view('viewTemplate', $data);
+    }
+    
+    public function promenaLozinke(){
+        
+        $this->load->model('UserModel');
+        
+        $this->form_validation->set_message('required', '{field} je obavezno polje');
+        $this->form_validation->set_message('differs', '{field} mora da se razlikuje od polja {param}');
+        $this->form_validation->set_message('matches', '{field} mora da bude ista kao polje {param}');
+        
+        
+        $this->form_validation->set_rules('korisnicko', 'Korisnicko ime', 'required');
+        $this->form_validation->set_rules('staraLozinka', 'Stara lozinka', 'required');
+        $this->form_validation->set_rules('novaLozinka', 'Nova lozinka', 'required|differs[staraLozinka]|callback_valid_password');
+        $this->form_validation->set_rules('novaLozinkaPon', 'Potvrda nove lozinke', 'required|matches[novaLozinka]');
+        
+          if ($this->form_validation->run() == 0) {
+              $this->novaLozinka();
+          } else {
+                $username = $this->input->post('korisnicko');
+                $oldPass = $this->input->post('staraLozinka');
+                $newPass = $this->input->post('novaLozinka');
+                $user = $this->UserModel->login($username, $oldPass);
+                if(empty($user)){
+                    $data['middle'] = 'middle/resetLozinke';
+                    $data['middle_data'] = ['err' => 'Neispravni podaci. Molimo vas, unesite ispravno korisnicko ime i/ili staru lozinku.'];
+                    $this->load->view('viewTemplate', $data);
+                }else{
+                    $this->RegistracijaModel->promeniLozinku($username, $newPass);
+                    $this->session->set_flashdata('regPoruka', 'Lozinka je  uspesno izmenjena. Molimo vas da se ulogujete.');
+                    redirect('Login');
+                }
+          }
+        
         
     }
 

@@ -16,4 +16,10 @@ class RegistracijaModel extends CI_Model {
         $this->db->insert('korisnik', $data);
         
     }
+    
+    public function promeniLozinku($username, $newPass){
+            $this->db->set('lozinka', password_hash($newPass, PASSWORD_DEFAULT));
+            $this->db->where('korisnicko', $username);
+            $this->db->update('korisnik');  
+    }
 }

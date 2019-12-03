@@ -182,7 +182,7 @@ div#calendar div.box{
     left:0px;
     width:100%;
     height:60px;
-    background-color: #894186 ;   
+    background-color: #809fff ;   
 }
  
 div#calendar div.header{
@@ -225,7 +225,7 @@ div#calendar div.header a.next{
  
 /*******************************Calendar Content Cells*********************************/
 div#calendar div.box-content{
-    border:1px solid #787878 ;
+    border:1px solid #809fff ;
     border-top:none;
 }
  
@@ -251,7 +251,7 @@ div#calendar ul.label li{
     line-height:40px;
     vertical-align:middle;
     text-align:center;
-    color:#894186;
+    color:#809fff;
     font-size: 25px;
     font-weight: bold;
     background-color: transparent;
@@ -279,14 +279,14 @@ div#calendar ul.dates li{
     width:80px;
     height:80px;
     font-size:25px;
-    background-color: #f4e8f4;
+    background-color: #e5ebff;
 /*    border: 1px solid black;*/
     color:black;
     text-align:center; 
 }
 
 div#calendar ul.dates li:hover{
-    background-color: #e0c2e0;
+    background-color: #ccd8ff;
     cursor: pointer;
 }
 
@@ -303,7 +303,7 @@ div.clear{
 }     
 
 .danas{
-    border: 1.5px solid #b266b2;
+    border: 1.5px solid #809fff;
 }
 
 /*.danas:hover{
@@ -313,6 +313,12 @@ div.clear{
 .kalendar-wrap{
     min-height: calc(100% - 188px);
     overflow: hidden;
+    background-image: url('../images/ordinacija.jpg');
+    padding: 0 !important;
+}
+
+.kalendar-filter{
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 /*GOTOV KALENDAR*/
@@ -352,22 +358,23 @@ div.clear{
 
 .usluga-naziv{
     font-size: 30px;
-    color: #894186;
+    color: #809fff;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .naslov{
-    color: #894186;
+    color: #809fff;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .termini{
-    border: 1px solid #894186;
+    border: 1px solid #809fff;
     height: 450px;
     overflow: auto;
     width: 350px;
     margin-top: 40px;
     position: relative;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .lekar{
@@ -378,7 +385,7 @@ div.clear{
     position: -webkit-sticky;
     position: sticky;
     top:0;
-    background-color: #894186;
+    background-color: #809fff;
     color: white;
 
 }
@@ -440,7 +447,7 @@ div.clear{
 
 .zakazi-dugme{
     height: 50px;
-    background-color: #894186;
+    background-color: #809fff;
     color: white;
     font-size: 20px;
     width: 342px;
@@ -465,11 +472,11 @@ div.clear{
 
 #skrol::-webkit-scrollbar-thumb
 {
-	background-color: #894186;
+	background-color: #809fff;
 }
 
 .select-doktor{
-    background-color: #894186;
+    background-color: #809fff;
     color: white;
     border: 0.5px solid #D8BFD8;
 }
@@ -574,7 +581,7 @@ div.clear{
 }
 
 .mask{
-    background-color: #fcf9fc !important;
+    background-color: #f8faff !important;
     cursor: default !important;
 }
 .pocetna-slider{
@@ -932,6 +939,63 @@ div.clear{
 .ponuda-sredina{
     color: gray;
 }
+
+
+#termini{
+   display: none;
+}
+
+.termini-unutra{
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.tabela-termini{
+    border-top: none !important;
+}
+
+.reset-lozinke{
+    background-image: url('../images/ordinacija.jpg');
+    min-height: calc(100vh - 183px);
+    padding: 0 !important;
+}
+
+.lozinka-filter{
+    background-color: rgba(255, 255, 255, 0.5);
+    min-height: calc(100vh - 183px);
+    width: 100%;
+}
+
+.lozinka-wrap{
+    padding-top: 1%;
+}
+
+
+.modal-content-lozinka {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: auto; 
+    padding: 0;
+    border: 1px solid #888;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+ 
+}
+
+.modal-header-lozinka{
+  padding: 2px 16px;
+  background-color: #809fff;
+  color: white;
+}
+
+.modal-body-lozinka {
+    padding: 5% 20%;
+    text-align: center;
+}
+
+
+
 
 
 

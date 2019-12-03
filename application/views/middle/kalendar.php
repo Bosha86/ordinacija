@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <div class="kalendar-wrap container-fluid">
+    <div class="kalendar-filter">
     
     
     <div id="myModal" class="modal">
@@ -53,7 +54,7 @@ and open the template in the editor.
         </div>
     </div>
     </div>
-<!--    <button onclick="vreme()">Dan</button>-->
+    </div>
 </div>
 
 <script>

@@ -60,7 +60,7 @@
                             <br/>
                             <input class="form-control" type="password" placeholder="Lozinka" name="lozinka" required oninvalid="this.setCustomValidity('Unesite lozinku')" oninput="this.setCustomValidity('')" />
                             <div id="lozinka-greska"></div>  
-                            <small><a href="<?php echo site_url('Reset_lozinke')?>">Zaboravili ste lozinku?</a></small>
+                            <small><a href="<?php echo site_url('Registracija/novaLozinka')?>">Promeni lozinku</a></small>
                                 </div>
                             </div>
                             <br/>

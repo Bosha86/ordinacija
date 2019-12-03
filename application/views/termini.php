@@ -6,8 +6,6 @@ foreach ($zauzetiTermini as $termin){
 }
 
 
-//date("g:i a", strtotime("15:30:00"));
-
 ?>
 
 <div class="termini" id="skrol">

@@ -1,11 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * Description of User
- *
- * @author gordan
- */
+
 class User extends CI_Controller {
    
     public function __construct() {

@@ -1,16 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of UserModel
- *
- * @author gordan
- */
 class UserModel extends CI_Model {
 
     public function login($username, $password) {
@@ -48,7 +38,8 @@ class UserModel extends CI_Model {
                 ->from('termin')
                 ->join('korisnik', 'korisnik.idKor = termin.idKor')
                 ->join('usluge', 'usluge.idUsl = termin.idUsl')
-                ->where('korisnik.idKor', $idKor);
+                ->where('korisnik.idKor', $idKor)
+                ->order_by('datum', 'DESC');
 
         $query = $this->db->get();
         return $query->result_array();
