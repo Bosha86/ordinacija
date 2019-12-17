@@ -5,7 +5,7 @@
 class RezervacijaModel extends CI_Model {
    
     public function rezervacija($datum, $vreme, $idKor, $idDok, $idUsl){
-        
+        // UPISUJEMO DATUM, VREME, KORISNIKA, DOKTORA I USLUGU U TABELU TERMIN - OVO JE PRILIKOM REZERVACIJE TERMINA
         $data = array(
             'datum' => $datum,
             'vreme' => $vreme,
@@ -19,14 +19,14 @@ class RezervacijaModel extends CI_Model {
     }
     
     public function dohvatiUsluge(){
-        
+        //DOHVATAMO SVE USLUGE
         $query = $this->db->get('usluge');
         return $query->result_array();
                 
     }
     
     public function proveraTermina($rezDatum, $rezVreme){
-        
+        //PROVERA DA LI JE TERMIN SLOBODAN
        $query = $this->db->select('datum, vreme')
                 ->from('termin')
                 ->where('datum', $rezDatum)
@@ -38,7 +38,7 @@ class RezervacijaModel extends CI_Model {
             return true;
         }
     }
-    
+    // F-JA ZA VRACANJE SVIH ZAUZETIH TERMINA ZA ODREDJENI DATUM I DOKTORA
     public function zauzetiTermini($doktor, $datum){
         $this->db->select('vreme');
         $this->db->where('datum', $datum);
@@ -49,7 +49,7 @@ class RezervacijaModel extends CI_Model {
         return $query->result_array();
         
     }
-    
+    // OVO JE U RADU, ZA ADMINA, NIJE JOS GOTOVO
     public function sviZauzetiTermini($datum){
         $this->db->select('vreme, idDok, idUsl, idKor');
         $this->db->where('datum', $datum);
@@ -59,6 +59,8 @@ class RezervacijaModel extends CI_Model {
         return $query->result_array();
     }
 
+    
+    //DOHVATAM SVE DOKTORE
         public function dohvatiDoktore(){
         $query = $this->db->get('doktor');
         return $query->result_array();

@@ -2,7 +2,7 @@
 
 
 class RegistracijaModel extends CI_Model {
-    
+    // OVDE DODAJEMO NOVOG KORISNIKA U BAZU, NAJJEDNOSTAVNIJE
     public function dodajKorisnika($korisnicko, $lozinka, $ime, $prezime, $email, $telefon, $rodjen, $tip){
         
         $data = ['korisnicko' => $korisnicko, 'lozinka' => password_hash($lozinka, PASSWORD_DEFAULT), 
@@ -12,7 +12,7 @@ class RegistracijaModel extends CI_Model {
         $this->db->insert('korisnik', $data);
         
     }
-    
+    //OVDE MENJAMO LOZINKU, ISTO SKROZ JEDNOSTAVNO
     public function promeniLozinku($username, $newPass){
             $this->db->set('lozinka', password_hash($newPass, PASSWORD_DEFAULT));
             $this->db->where('korisnicko', $username);

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Stranice extends CI_Controller{
-   
+   // BUKVALNO SAMO FUNCKIJE ZA OTVARANJE SVIH STRANICE
     public function oNama(){
          $data['middle'] = 'middle/oNama';
          $this->load->view('viewTemplate', $data);

@@ -2,7 +2,7 @@
 
 
 class AdminModel extends CI_Model{
-    
+    //OVO JOS NECU NISTA DA KOMENTARISEM, U RADU JE
     public function dohvatiKorisnike(){
         $query = $this->db->get('korisnik');
         return $query->result_array();
