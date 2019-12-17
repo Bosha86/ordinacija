@@ -13,14 +13,18 @@ class Login extends CI_Controller {
         $this->load->model('UserModel');
     }
 
+//    METODA ZA UCITAVANJE POCETNE STRANICE
+//    OVO JE PRVA METODA KOJA SE POZIVA KAD OTVORIMO SAJT
 
     public function index() {
         
         $data['middle'] = 'middle/guest';
-        $data['middle_data'] = ['kontakt' => $this->load->view('kontakt_deo', '', true)];
+        $data['middle_data'] = ['kontakt' => $this->load->view('kontakt_deo', '', true)]; //SALJEMO KONTAKT_DEO KROZ PROMENLJIVU; KONTAKT_DEO JE VIEW, IZVAN MIDDLEA, KOJI PREDSTAVLJA DIV SA KONTAKT INFORMACIJAMA
         $this->load->view('viewTemplate', $data);
     }
-
+//METODA ZA LOGIN; PROVERAVAMO DA LI POSTOJI KORISNIK SA TIM KORISNICKIM IMENOM I PASSWORDOM
+    //AKO POSTOJI, DAJEMO MU DA UDJE NA SVOJ PROFIL I UPISUJEMO SVE PODATKE O NJEMU U SESIJU
+    //AKO NE POSTOJI, VRACAMO GA NAZAD NA LOGIN
     public function login() {
 
         $username = $this->input->post('korisnicko');
@@ -46,7 +50,8 @@ class Login extends CI_Controller {
             }
         }
     }
-    
+    //TRI METODE ZA UCITAVANJE STRANICA
+    //OVO SE KORISTI KAD KLIKNEMO NA LINK "O NAMA" - DA NAM OTVORI STRANICU O NAMA
     public function oNama(){
          $data['middle'] = 'middle/oNama';
          $this->load->view('viewTemplate', $data);
