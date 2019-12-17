@@ -90,7 +90,7 @@ class Kalendar extends CI_Controller {
 //        if($this->input->get('year')!== null || $this->input->get('month')!== null){
 //            return $content;
 //        }else{
-        
+        if($this->session->userdata('user')['tip'] == "k"){
         $data['middle'] = "middle/kalendar";
         $data['middle_data'] = ["kalendar" => $content,
                                 "usluga" => $usluga,
@@ -98,6 +98,11 @@ class Kalendar extends CI_Controller {
         $this->load->view('viewTemplate', $data);
 //        return $content;   
 //        }
+        }else if($this->session->userdata('user')['tip'] == "a"){
+            $data['middle'] = 'middle/admin';
+            $data['middle_data'] = ['kalendar' => $content];
+            $this->load->view('viewTemplate', $data);
+        }
     }
      
     /********************* PRIVATE **********************/ 

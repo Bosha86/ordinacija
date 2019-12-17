@@ -98,6 +98,7 @@ class Rezervacija extends CI_Controller {
             $Mail->Subject = 'Potvrda rezervacije termina';
             $Mail->Body = $msg;
             $Mail->AddAddress($mejl); 
+            $Mail->Send();
     }
 
 

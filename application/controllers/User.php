@@ -20,6 +20,7 @@ class User extends CI_Controller {
         $data['middle'] = 'middle/pocetna';
         $data['middle_data'] = ['termini' => $this->UserModel->termini($idKor),
                                 'usluge' => $this->UserModel->usluge($idKor, $idTer)];
+//        PROVERI
         $this->load->view('viewTemplate', $data);
     }
     

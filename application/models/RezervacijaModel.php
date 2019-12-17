@@ -1,11 +1,6 @@
 <?php
 
 
-/**
- * Description of RezervacijaModel
- *
- * @author gordan
- */
 
 class RezervacijaModel extends CI_Model {
    
@@ -55,7 +50,16 @@ class RezervacijaModel extends CI_Model {
         
     }
     
-    public function dohvatiDoktore(){
+    public function sviZauzetiTermini($datum){
+        $this->db->select('vreme, idDok, idUsl, idKor');
+        $this->db->where('datum', $datum);
+        $this->db->where('stanje', 'z');
+        $this->db->from('termin');
+        $query=$this->db->get();
+        return $query->result_array();
+    }
+
+        public function dohvatiDoktore(){
         $query = $this->db->get('doktor');
         return $query->result_array();
     }

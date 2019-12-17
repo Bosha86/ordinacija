@@ -39,7 +39,7 @@ and open the template in the editor.
                         </div>
                         <div clas="row">
                             <div class="col-sm-5 offset-sm-2">
-                                <a href="<?php echo site_url('Login/oNama')?>" class="dugme-vise">Detaljnije</a>
+                                <a href="<?php echo site_url('Stranice/oNama')?>" class="dugme-vise">Detaljnije</a>
                             </div>
                         </div>
                         </div>
@@ -59,7 +59,7 @@ and open the template in the editor.
                         </div>
                         <div clas="row">
                             <div class="col-sm-5 offset-sm-2">
-                                <a href="<?php echo site_url('Login/tim')?>" class="dugme-vise">Detaljnije</a>
+                                <a href="<?php echo site_url('Stranice/tim')?>" class="dugme-vise">Detaljnije</a>
                             </div>
                         </div>
                         </div>
@@ -80,7 +80,7 @@ and open the template in the editor.
                         </div>
                         <div clas="row">
                             <div class="col-sm-5 offset-sm-2">
-                                <a href="<?php echo site_url('Login/usluge')?>" class="dugme-vise">Detaljnije</a>
+                                <a href="<?php echo site_url('Stranice/usluge')?>" class="dugme-vise">Detaljnije</a>
                             </div>
                         </div>
                         </div>
@@ -112,19 +112,19 @@ and open the template in the editor.
           <img src="<?php echo base_url().'/usluge/beljenje.jpg'?>" class="rounded-circle img-round" width="140" height="140">
         <h2 style="color:#809fff">Beljenje</h2>
         <p style="color:gray">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-        <p><a class="btn btn-outline-info" href="<?php echo site_url('Login/usluge')?>#beljenje" role="button">Detaljnije &raquo;</a></p>
+        <p><a class="btn btn-outline-info" href="<?php echo site_url('Stranice/usluge')?>#beljenje" role="button">Detaljnije &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4 text-center">
         <img src="<?php echo base_url().'/usluge/vadjenje.jpg'?>" class="rounded-circle img-round" width="140" height="140">
         <h2 style="color:#809fff">Vađenje</h2>
         <p style="color:gray">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        <p><a class="btn btn-outline-info" href="<?php echo site_url('Login/usluge')?>#vadjenje" role="button">Detaljnije &raquo;</a></p>
+        <p><a class="btn btn-outline-info" href="<?php echo site_url('Stranice/usluge')?>#vadjenje" role="button">Detaljnije &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4 text-center">
        <img src="<?php echo base_url().'/usluge/anestezija.jpg'?>" class="rounded-circle img-round" width="140" height="140">
         <h2 style="color:#809fff">Lečenje</h2>
         <p style="color:gray">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-outline-info" href="<?php echo site_url('Login/usluge')?>#lecenje" role="button">Detaljnije &raquo;</a></p>
+        <p><a class="btn btn-outline-info" href="<?php echo site_url('Stranice/usluge')?>#lecenje" role="button">Detaljnije &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
     </div>
@@ -173,7 +173,7 @@ and open the template in the editor.
                            <br/>
                         <div class="row parallax-btn">
                             <div class="col-4 offset-4 text-center">
-                                <a href="<?php echo site_url('Login/oNama')?>" class="btn btn-warning">Vise o nama</a>
+                                <a href="<?php echo site_url('Stranice/oNama')?>" class="btn btn-warning">Vise o nama</a>
                             </div>
                          </div> 
                            <br/>
@@ -193,7 +193,7 @@ and open the template in the editor.
       <div class="card">
         <img class="card-img-top" src="<?php echo base_url().'/doktori/doktor.jpg'?>" alt="Card image cap">
         <div class="card-body">
-            <a href="<?php echo site_url('Login/tim')?>#markovic"><h3 class="card-title">Dr Marko Markovic</h3></a>
+            <a href="<?php echo site_url('Stranice/tim')?>#markovic"><h3 class="card-title">Dr Marko Markovic</h3></a>
           <h6 class="card-text"> Specijalista ortopedije vilica</h6>
           
         </div>
@@ -201,7 +201,7 @@ and open the template in the editor.
       <div class="card">
         <img class="card-img-top" src="<?php echo base_url().'/doktori/doktor4.jpeg'?>" alt="Card image cap">
         <div class="card-body">
-            <a href="<?php echo site_url('Login/tim')?>#brankovic"><h3 class="card-title">Aleksandra Brankovic</h3></a>
+            <a href="<?php echo site_url('Stranice/tim')?>#brankovic"><h3 class="card-title">Aleksandra Brankovic</h3></a>
           <h6 class="card-text">Viši zubni tehnicar</h6>
           
         </div>
@@ -209,7 +209,7 @@ and open the template in the editor.
       <div class="card">
         <img class="card-img-top" src="<?php echo base_url().'/doktori/doktor2.jpg'?>" alt="Card image cap">
         <div class="card-body">
-            <a href="<?php echo site_url('Login/tim')?>#rasic"><h3 class="card-title">Dr Biljana Rasic</h3></a>
+            <a href="<?php echo site_url('Stranice/tim')?>#rasic"><h3 class="card-title">Dr Biljana Rasic</h3></a>
           <h6 class="card-text">Specijalista oralne horurgije</h6>
           
         </div>
@@ -217,46 +217,14 @@ and open the template in the editor.
         <div class="card">
         <img class="card-img-top" src="<?php echo base_url().'/doktori/doktor5.jpg'?>" alt="Card image cap">
         <div class="card-body">
-            <a href="<?php echo site_url('Login/tim')?>#glisic"> <h3 class="card-title">Dr Bojan Glisic</h3></a>
+            <a href="<?php echo site_url('Stranice/tim')?>#glisic"> <h3 class="card-title">Dr Bojan Glisic</h3></a>
           <h6 class="card-text">Decija stomatologija</h6>
           
         </div>
       </div>
     </div>
  </div>
-    
-    
-    <div class="cenovnik container-fluid" id="cenovnik">
-        <div class="row">
-            <div class="col-12 text-center cenovnik-naslov">
-                <h1 style="padding: 10px;">Cenovnik</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-10 offset-1">
-                <table class="table table-hover table-bordered">
-                    <thead>
-                      <tr>
-                        <th scope="col">Usluga</th>
-                        <th scope="col">Cena(RSD)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <?php  foreach ($usluge as $usluga){
-                            $naziv = $usluga['naziv'];
-                            $cena = $usluga['cena'];          
-                        ?>
-                      <tr>
-                        <td><?php echo $naziv ?></td>
-                        <td><?php echo $cena ?></td>
-                      </tr> 
-                        <?php } ?>
-                    </tbody>
-                </table>  
-            </div>
-        </div>
-    </div>
-    
+       
     <div class="container-fluid onlajn-zakazivanje">
         <div class="row">
             <div class="col-12" style="padding: 0">
@@ -328,114 +296,8 @@ and open the template in the editor.
         </div>
     </div>
     
-     <div class="contact-us" id="kontakt">
-         <div class="row">
-             <div class="col-12 text-center">
-                 <h2 style="margin-bottom: 30px; color: #809fff">Kontakt</h2>
-             </div>
-         </div>
-       <div class="container">
-          <div class="contact-form">
-           <div class="row">
-               <div class="col-sm-7">                  
-                    <form id="ajax-contact"  method="post" action="contact-form-mail.php" role="form">
-                        <div class="messages" id="form-messages"></div>
-                        <div class="controls">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Unesite ime *" required="required" data-error="Ime je obavezno">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Unesite prezime *" required="required" data-error="Prezime je obavezno">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Unesite validan email *" required="required" data-error="Validan email je obavezan">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input id="form_phone" type="tel" name="phone"  class="form-control" placeholder="Unesite broj telefona *">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea id="form_message" name="message" class="form-control" placeholder="Vasa poruka *" rows="4" required="required" data-error="Molimo vas unesite poruku"></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-warning" value="Pošalji">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                   <br>
-                                    <small class="text-muted"><strong>*</strong> Obavezna polja</small>
-                                </div>
-                            </div>
-                        </div>
+    <?php echo $kontakt; ?>
 
-                    </form>
-    
-               </div>
-               <div class="col-sm-5">
-                   <div class="row col1">
-                       <div class="col-sm-3">
-                           <i class="fa fa-map-marker" style="font-size:16px;"></i>   Adresa
-                       </div>
-                       <div class="col-sm-9">
-                            Goce Delčeva 25,<br> 11000 Beograd
-                       </div>
-                   </div>
-                   
-                    <div class="row col1">
-                        <div class="col-sm-3">
-                            <i class="fa fa-phone"></i>   Telefon
-                        </div>
-                        <div class="col-sm-9">
-                             011/245-46-72
-                        </div>
-                    </div>
-                    <div class="row col1">
-                        <div class="col-sm-3">
-                             <i class="fa fa-fax"></i>    Fax  
-                        </div>
-                        <div class="col-sm-9">
-                              123 123 4567
-                        </div>
-                    </div>
-                    <div class="row col1">
-                        <div class="col-sm-3">
-                            <i class="fa fa-envelope"></i>   Email
-                        </div>
-                        <div class="col-sm-9">
-                             <a href="mailto:info@yourdomain.com">info@yourdomain.com</a> <br> <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
-                        </div>
-                    </div><br>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.54423558349!2d20.413088515407654!3d44.830848879098575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a657496db33af%3A0xdf83e23ece0bd8d4!2z0JPQvtGG0LUg0JTQtdC70YfQtdCy0LAgMjUsINCR0LXQvtCz0YDQsNC0!5e0!3m2!1ssr!2srs!4v1575110300619!5m2!1ssr!2srs" width="450" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-               </div>
-           </div>
-           
-          </div>
-       </div>
-   </div>
-    
-    
-    
-    
 </div>
 
 <script>

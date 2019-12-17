@@ -54,7 +54,6 @@ $year = date("Y",time());
             </div>
             <a href="<?php echo site_url('Rezervacija/index') ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Rezervisi termin</a>
             <button class="btn btn-danger btn-lg float-right" id="dugmePrikazi">Moji termini</button>
-            <a href="<?php echo site_url('Rezervacija/posaljiMejl') ?>">Posalji mejl</a>
             
         </div>
         <div class="col-6" id="termini">

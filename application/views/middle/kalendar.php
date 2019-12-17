@@ -30,14 +30,17 @@ and open the template in the editor.
 
                     <div class="modal-footer">
                         <div id="modal-buttons">
-                        <button id="zakazivanjeDugme">Potvrdi zakazivanje</button>
-                        <button id="odustajanjeDugme">Odustani</button>
+                            <button id="zakazivanjeDugme" class="btn btn-success">Zakazi</button>
+                            <button id="odustajanjeDugme" class="btn btn-danger">Odustani</button>
                         </div>
                     </div>
 
                 </div>
             </div>
-    
+        
+        <div class="loader-pozadina" id="loader">
+            <div class="lds-dual-ring"></div>
+        </div>
     
     
     
@@ -101,7 +104,12 @@ and open the template in the editor.
             document.getElementById("zakazivanjeDugme").onclick = function(){
                     xmlhttp=new XMLHttpRequest();
                     xmlhttp.onreadystatechange=function(){
-                        if(this.readyState==4&&this.status==200){ 
+                        if(this.readyState!==4){
+                            document.getElementById("loader").style.display = "flex";
+                        }
+                        
+                        else if(this.readyState==4&&this.status==200){ 
+                            document.getElementById("loader").style.display = "none";
                             document.getElementById("modal-body").innerHTML=this.responseText;
                             document.getElementById("modal-buttons").innerHTML = "";
                         }

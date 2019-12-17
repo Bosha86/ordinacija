@@ -20,13 +20,13 @@
                   <a class="nav-link dugme" href="<?php echo site_url('Login')?>#kontakt">Kontakt</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link dugme" href="<?php echo site_url('Login')?>#cenovnik">Cenovnik</a>
+                  <a class="nav-link dugme" href="<?php echo site_url('Stranice/cenovnik')?>">Cenovnik</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link dugme" href="<?php echo site_url('Login/tim')?>">Naš tim</a>
+                  <a class="nav-link dugme" href="<?php echo site_url('Stranice/tim')?>">Naš tim</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link dugme" href="<?php echo site_url('Login/oNama')?>">O nama</a>
+                  <a class="nav-link dugme" href="<?php echo site_url('Stranice/oNama')?>">O nama</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link dugme" href="<?php echo site_url('Login')?>">Početna</a>

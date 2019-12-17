@@ -34,6 +34,8 @@
                            
                       </tr>
                  <?php } ?>
+                      
+<!--                      PROVERI-->
                 
                            <th scope="row" colspan="3">Ukupno</th>
                            <td><?php echo $sum; ?></td>

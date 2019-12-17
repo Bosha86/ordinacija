@@ -16,19 +16,19 @@
                   <a class="nav-link dugme" href="<?php echo site_url('User/logout')?>" class="dugme">Izloguj se</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link dugme" href="">Kontakt</a>
+                  <a class="nav-link dugme" href="<?php echo site_url('Stranice/kontakt')?>">Kontakt</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link dugme" href="">Cenovnik</a>
+                  <a class="nav-link dugme" href="<?php echo site_url('Stranice/cenovnik')?>">Cenovnik</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link dugme" href="">Galerija</a>
+                  <a class="nav-link dugme" href="<?php echo site_url('Stranice/tim')?>">Naš tim</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link dugme" href="">O nama</a>
+                  <a class="nav-link dugme" href="<?php echo site_url('Stranice/oNama')?>">O nama</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link dugme" href="<?php echo site_url('Login')?>">Pocetna</a>
+                  <a class="nav-link dugme" href="<?php echo site_url('User')?>">Pocetna</a>
                 </li>
               </ul>   
 	    <div>   

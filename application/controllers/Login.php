@@ -16,11 +16,8 @@ class Login extends CI_Controller {
 
     public function index() {
         
-        $this->load->model("RezervacijaModel");
-        $usluge = $this->RezervacijaModel->dohvatiUsluge();
-
         $data['middle'] = 'middle/guest';
-        $data['middle_data'] = ['usluge' => $usluge];
+        $data['middle_data'] = ['kontakt' => $this->load->view('kontakt_deo', '', true)];
         $this->load->view('viewTemplate', $data);
     }
 
@@ -42,8 +39,11 @@ class Login extends CI_Controller {
             $korisnici = $this->UserModel->dohvatiKorisnika($username);
             $user = $korisnici[0];
             $this->session->set_userdata('user', $user);
-            $this->output->enable_profiler(false);
-            redirect('User');
+            if($user['tip'] == 'k'){
+                    redirect('User');
+            }else if($user['tip'] == 'a'){
+                    redirect('Admin');
+            }
         }
     }
     
