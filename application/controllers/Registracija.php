@@ -2,11 +2,6 @@
 
 defined('BASEPATH') or exit('no direct access');
 
-/**
- * Description of Registracija
- *
- * @author gordan
- */
 class Registracija extends CI_Controller {
 
     public function __construct() {

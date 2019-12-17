@@ -4,6 +4,8 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<!--AKO POSTOJI PORUKA U SESIJI (PORUKA SE UPISUJE NAKON STO SE USPESNO REGISTRUJEMO)
+OVDE SE ISPISUJE-->
 <?php if($this->session->flashdata('regPoruka')!==null){ ?>
 <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin: 0">
         <strong><?php echo $this->session->flashdata('regPoruka');?></strong>
@@ -295,17 +297,18 @@ and open the template in the editor.
             </div>
         </div>
     </div>
-    
+<!--    OVDE SAMO ISPISUJEMO CEO DIV SA KONTAKT INFORMACIJAMA
+    PREKO PROMENLJIVE KOJU SMO POSLALI IZ KONTROLERA, A VIEW FAJL SMO NAPRAVILI ODVOJENO (KONTAKT_DEO, TAKO SE ZOVE)-->
     <?php echo $kontakt; ?>
 
 </div>
 
 <script>
-    
+//    OVO JE SVE SKRIPTA ZA PRIKAZIVANJE ELEMENATA KAD SKROLUJEMO DO NJIH
     (function() {
   var elements;
   var windowHeight;
-
+//  DOHVATAMO SVE ELEMENTE SA KLASOM HIDDEN
   function init() {
     elements = document.querySelectorAll('.hidden');
     windowHeight = window.innerHeight;

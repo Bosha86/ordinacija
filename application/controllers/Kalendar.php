@@ -2,7 +2,7 @@
 // KONTROLER ZA PRAVLJENJE KALENDARA
 
 class Kalendar extends CI_Controller {
-//PRVO PROGRALAVAMO PROMENLJIVE, KOJE CEMO KORISTITI U RAZLICITIM METODAMA U OKVIRU OVOG KONTROLERA
+//PRVO PROGLASAVAMO PROMENLJIVE, KOJE CEMO KORISTITI U RAZLICITIM METODAMA U OKVIRU OVOG KONTROLERA
     // OVO "PRIVATE" ZNACI DA OVIM STVARIMA MOZEMO DA PRISTUPIMO SAMO UNUTAR OVOG KONTROLERA
     //ZA RAZLIKU OD DONJE METODE, KOJA JE PUBLIC, I KOJOJ MOZEMO DA PRISTUPIMO SPOLJA (DA JE POZOVEMO)
     private $dayLabels = array("Pon","Uto","Sre","Čet","Pet","Sub","Ned");
@@ -222,6 +222,8 @@ class Kalendar extends CI_Controller {
         $daysInMonths = $this->_daysInMonth($month,$year);
          
         $numOfweeks = ($daysInMonths%7==0?0:1) + intval($daysInMonths/7);
+        
+        //POGLEDAJ
          
         $monthEndingDay= date('N',strtotime($year.'-'.$month.'-'.$daysInMonths));
          
