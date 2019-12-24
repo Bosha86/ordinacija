@@ -40,10 +40,10 @@ class Rezervacija extends CI_Controller {
         $mejl = $this->session->userdata('user')['email'];
         $idDok = $this->input->post('doktor');
         $idUsl = $this->input->post('usluga');
-        //KAZEMO MODELU DA IZVRSI REZERVACIJU, TJ DA UPISE SVE U BAZU
-        $this->RezervacijaModel->rezervacija($datum, $vreme, $idKor, $idDok, $idUsl); 
         //NAPRAVIMO KOD OD RENDOM 10 SLOVA
         $kod = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10);
+        //KAZEMO MODELU DA IZVRSI REZERVACIJU, TJ DA UPISE SVE U BAZU
+        $this->RezervacijaModel->rezervacija($datum, $vreme, $idKor, $idDok, $idUsl, $kod); 
         //NAPRAVIMO PORUKU ZA MEJL
         $msg = "Poštovani/a $ime $prezime, uspešno ste zakazali termin u ordinaciji 'Unident PRO' za ".date("d.m.Y", strtotime($this->input->post('datum')))." u ".$this->input->post('termin')." časova. Vas jedinstveni kod je $kod.";
         //POZOVEMO F-JU ZA SLANJE MEJLA (I PROSLEDIMO MEJL ADRESU ULOGOVANOG KORINIKA I PORUKU KOJU SMO UPRAVO NAPRAVILI)

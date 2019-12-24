@@ -493,8 +493,6 @@ div.clear{
     top: 0;
     right: 5px;
     z-index: -1;
-/*    animation: mymove 2s; */
-    -webkit-animation: right-to-left 1s linear forwards;
     animation: right-to-left 1s linear forwards;
 }     
 
@@ -626,7 +624,7 @@ div.clear{
 }
 
 @-webkit-keyframes right-to-left1{
-    from {left: -1000px;}
+    from {left: -100vw;}
     to {left: 0px;}
 }
 
@@ -1039,10 +1037,92 @@ div.clear{
   }
 }
 
+.termin-admin{
+    width: 250px;
+    height: 150px;
+    border: 1px solid gray;
+    margin: 10px;
+    display: inline-flex;
+    flex-flow: column;
+}
+
+.termin-admin-zauzeto{
+    width: 250px;
+    height: 150px;
+    border: 1px solid red;
+    margin: 10px;
+    display: inline-flex;
+}
+
+/*#termini-div-admin{
+    height: 80vh;
+    overflow: auto;
+    padding-top: 30px;
+}*/
 
 
+.datum-termin-sredjeno{
+     background-color: #809fff;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+}
 
+.termini-okvir{
+    height: 80vh;
+    overflow: auto;
+    margin-top: 30px;
+}
 
+.sat{
+    font-weight: bold;
+    color: #809fff;
+    padding: 5px;
+}
+
+.naziv-termina{
+    padding: 5px;
+    color: red;
+}
+
+.slobodni-termini{
+   padding: 5px;
+   color: #809fff;
+}
+
+.pretraga-div{
+    margin-top: 35px;
+}
+.pretraga{
+    width: 30% !important;
+    display: inline-block !important;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.admin-meni-dugme{
+    padding: 20px;
+    background-color: #809fff;
+    color: white;
+}
+
+.admin-meni-dugme:hover{
+    background-color: #738fe5;
+}
+
+.admin-meni{
+    padding-top: 35px;
+}
+
+.admin-meni a:hover{
+    text-decoration: none;
+}
+
+.tabela-termin{
+    border: 1px solid black;
+}
 
 
 

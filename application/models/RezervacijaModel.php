@@ -4,7 +4,7 @@
 
 class RezervacijaModel extends CI_Model {
    
-    public function rezervacija($datum, $vreme, $idKor, $idDok, $idUsl){
+    public function rezervacija($datum, $vreme, $idKor, $idDok, $idUsl, $kod){
         // UPISUJEMO DATUM, VREME, KORISNIKA, DOKTORA I USLUGU U TABELU TERMIN - OVO JE PRILIKOM REZERVACIJE TERMINA
         $data = array(
             'datum' => $datum,
@@ -12,7 +12,8 @@ class RezervacijaModel extends CI_Model {
             'stanje' => 'z',
             'idKor' => $idKor,
             'idDok' => $idDok,
-            'idUsl' => $idUsl);
+            'idUsl' => $idUsl,
+            'kod' => $kod);
         $this->db->insert('termin', $data);
                 
                 

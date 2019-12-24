@@ -21,4 +21,29 @@ class AdminModel extends CI_Model{
         return $query->result_array ();
 
     }
+    
+    public function dovatiPodatke($idTer){
+        $this->db->select('termin.*, usluge.naziv, korisnik.email, korisnik.ime as korisnikIme, korisnik.prezime as korisnikPre, doktor.ime, doktor.prezime');
+        $this->db->from('termin');
+        $this->db->join('usluge', 'termin.idUsl = usluge.idUsl');
+        $this->db->join('korisnik', 'termin.idKor = korisnik.idKor');
+        $this->db->join('doktor', 'termin.idDok = doktor.idDok');
+        $this->db->where('idTer', $idTer);
+        $query=$this->db->get();
+        return $query->result_array ();
+        
+    }
+    
+    public function uradjeno($idTer){
+        $this->db->set('stanje', 'u');
+        $this->db->where('idTer', $idTer);
+        $this->db->update('termin');
+    }
+    
+    public function otkazi($idTer){
+        $this->db->set('stanje', 'o');
+        $this->db->where('idTer', $idTer);
+        $this->db->update('termin');
+    }
+    
 }

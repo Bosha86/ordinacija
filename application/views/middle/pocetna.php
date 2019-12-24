@@ -2,7 +2,8 @@
     <?php //echo '..   ' ?>        
 </div>-->
 <?php
-$user = $this->session->userdata('user');
+//$user = $this->session->userdata('user');
+foreach ($users as $user){
 $korisnicko = $user['korisnicko'];
 $ime = $user['ime'];
 $prezime = $user['prezime'];
@@ -11,6 +12,7 @@ $tel = $user['telefon'];
 $rodjendan = $user['rodjen'];
 $month = date("m",time());
 $year = date("Y",time()); 
+}
 ?>
 <div class="container" id="pocetnaUser">
     <div class="row">
@@ -52,8 +54,10 @@ $year = date("Y",time());
                     </tbody>
                 </table>
             </div>
+            <?php if($korisnicko == $this->session->userdata('user')['korisnicko']){ ?>
             <a href="<?php echo site_url('Rezervacija/index') ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Rezervisi termin</a>
-            <button class="btn btn-danger btn-lg float-right" id="dugmePrikazi">Moji termini</button>
+            <?php } ?>
+            <button class="btn btn-danger btn-lg float-right" id="dugmePrikazi">Termini</button>
             
         </div>
         <div class="col-6" id="termini">

@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 
 <?php 
-//foreach ($zauzetiTermini as $termin){
-//    $imeDok = $termin['doktor.ime'];
+$sviZauzetiTermini = [];
+foreach ($zauzetiTermini as $termin){
+ $datum = $termin['datum'];
+ $vreme = $termin['vreme'];
+ $idKor = $termin['idKor'];
+ $idDok = $termin['idDok'];
+ $idUsl = $termin['idUsl'];
+ $naziv = $termin['naziv'];
+ $imeKor = $termin['korisnikIme'];
+ $prezKor = $termin['korisnikPre'];
+ $imeDok = $termin['ime'];
+ $prezDok = $termin['prezime'];
+ array_push($sviZauzetiTermini, $vreme);
+}
 
-var_dump($zauzetiTermini);
 
 
 ?>
 
-<table class="table table-hover table-bordered">
-                    <thead>
-                      <tr>
-                          
-                         <th scope='col'><?php echo $ime?></th>;   
-                          
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <?php  foreach ($usluge as $usluga){
-                            $naziv = $usluga['naziv'];
-                            $cena = $usluga['cena'];          
-                        ?>
-                      <tr>
-                        <td><?php echo $naziv ?></td>
-                        <td><?php echo $cena ?></td>
-                      </tr> 
-                        <?php } ?>
-                      
-                    </tbody>
-                </table> 
+<div class="termini-admin">
+    <?php 
+    foreach ($sati as $sat){
+        $satZaIspis=date("H:i", strtotime($sat));
+         if(!empty($sviZauzetiTermini)){
+        if(in_array($sat, $sviZauzetiTermini)){ 
+    ?>
+        <div class="termin-admin-zauzeto"><?php echo $satZaIspis."<br/>".$idUsl?></div>
+        <?php 
+        }else{ ?>
+        <div class="termin-admin"><?php echo $satZaIspis?></div>
+    <?php 
+        }
+        }else{ ?>
+         <div class="termin-admin"><?php echo $satZaIspis?></div>
+        <?php }
+    }?>
+</div>

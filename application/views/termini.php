@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <?php
 
+$sviZauzetiTermini = [];
 foreach ($zauzetiTermini as $termin){
-    $zauzeto = $termin['vreme'];
+    array_push($sviZauzetiTermini, $termin['vreme']);
 }
 
 
@@ -34,8 +35,8 @@ foreach ($zauzetiTermini as $termin){
     <?php
     foreach ($sati as $sat){
         $satZaIspis=date("H:i", strtotime($sat));
-    if(isset($zauzeto)){
-    if($sat == $zauzeto){
+      if(!empty($sviZauzetiTermini)){
+        if(in_array($sat, $sviZauzetiTermini)){
         echo "<input type='radio' name='vreme' id='$satZaIspis' value='$satZaIspis' disabled><label for='$satZaIspis' class='zauzeto vreme-dan' data-toggle='tooltip' title='Ovaj termin je zauzet'>$satZaIspis</label>";
 //        echo "<div class='zauzeto vreme-dan' data-toggle='tooltip' title='Ovaj termin je zauzet'>".$satZaIspis."</span>";
     }
@@ -45,7 +46,7 @@ foreach ($zauzetiTermini as $termin){
     }else{
         echo "<input type='radio' name='vreme' id='$satZaIspis' value='$satZaIspis'><label for='$satZaIspis' class='slobodno vreme-dan'>$satZaIspis</label>";
     }
-}
+    }
     
     ?>
 <!--    </ul>-->

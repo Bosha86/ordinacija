@@ -14,13 +14,22 @@ class User extends CI_Controller {
     }
     //F-JA ZA OTVARANJE POETNE STRANICE NAKON LOGOVANJA
     public function index(){
-        
-        $idKor = $this->session->userdata('user')['idKor'];
+        //PROVERAVAMO DA LI JE SETOVAN ID U URL-U
+        //AKO JESTE, ONDA NJEGA KORISTIMO ZA OTVARANJE STRANICE
+        if($this->input->get('id') !== null){
+            $idKor = $this->input->get('id');
+        }else{
+            //AKO NIJE SETOVAN, ONDA KORISTIMO ID IZ SESSIJE
+            $idKor = $this->session->userdata('user')['idKor'];
+        }
+        $korisnik = $this->UserModel->dohvatiPodatkeZaKorisnika($idKor);
+//        $idKor = $this->session->userdata('user')['idKor'];
         $idTer = $this->input->get('idTer');
         $data['middle'] = 'middle/pocetna';
         //SALJEMO TERMINE I USLUGE, JER KORISNIK TREBA DA VIDI SVOJE ZAKAZANE, OTKAZANE I URADJENE TERMINE
         $data['middle_data'] = ['termini' => $this->UserModel->termini($idKor),
-                                'usluge' => $this->UserModel->usluge($idKor, $idTer)];
+                                'usluge' => $this->UserModel->usluge($idKor, $idTer),
+                                'users' => $korisnik];
 //  OVO SA USLUGAMA JOS TREBA PROVERITI ZASTO VRACA POGRESNE PODATKE
         $this->load->view('viewTemplate', $data);
     }

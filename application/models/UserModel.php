@@ -35,6 +35,14 @@ class UserModel extends CI_Model {
         $query = $this->db->get();
         return $query->result_array();
     }
+    
+    public function dohvatiPodatkeZaKorisnika($idKor){
+        $this->db->select('*');
+        $this->db->where('idKor', $idKor);
+        $this->db->from('korisnik');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
     public function termini($idKor) {
         //DOHVATAMO SVE TERMINE ULOGOVANOG KORISNIKA
