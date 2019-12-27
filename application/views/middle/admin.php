@@ -54,15 +54,17 @@
     <?php }else if(isset($korisnici)){ ?>
     <div class="col-7">
         <div class="text-center pretraga-div">
+            <form method="GET" action="<?php echo site_url('Admin/pretraga') ?>">
             <input type="text" placeholder="Korisnicko" name="korisnicko" class="form-control pretraga">
             <input type="text" placeholder="Ime" name="ime" class="form-control pretraga">
             <input type="text" placeholder="Prezime" name="prezime" class="form-control pretraga">
-            <input type="email" placeholder="E-mail" name="prezime" class="form-control pretraga">
+            <input type="email" placeholder="E-mail" name="email" class="form-control pretraga">
             <input type="number" placeholder="Telefon" name="telefon" class="form-control pretraga">
             <input type="date" placeholder="Rodjendan" name="rojendan" class="form-control pretraga">
-            <input type="button" value="Pretrazi" class="btn btn-primary form-control" style="width: 93% !important;">
+            <input type="submit" value="Pretrazi" class="btn btn-primary form-control" style="width: 93% !important;">
+            </form>
         </div>
-        <br/>
+        <br/>    
                 <table class="table table-striped">
             <thead>
               <tr>
@@ -95,7 +97,15 @@
                 <?php } ?>
             </tbody>
           </table>
-            <?php } ?>
+            <?php }else{
+                echo $msgPret;
+            }
+?>
+        
+        
+
+   
+   
         </div>  
     </div>
 </div>

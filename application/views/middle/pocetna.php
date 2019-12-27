@@ -4,6 +4,7 @@
 <?php
 //$user = $this->session->userdata('user');
 foreach ($users as $user){
+$idKor = $user['idKor'];
 $korisnicko = $user['korisnicko'];
 $ime = $user['ime'];
 $prezime = $user['prezime'];
@@ -16,6 +17,30 @@ $year = date("Y",time());
 ?>
 <div class="container" id="pocetnaUser">
     <div class="row">
+        
+        <div id="myModal" class="modal">
+                <div class="modal-content" id="modal-content">
+
+                    <div class="modal-header">
+                        <h4>Ostavi komentar</h4>
+                        <span class="close">&times;</span>
+                    </div>
+                    
+                    <div class="modal-body" id="modal-body">
+                        <textarea class="form-control" rows="5" id="comment"></textarea>   
+                        <input type="hidden" id="hidden">
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <div id="modal-buttons"> 
+                            <button id="odustajanjeDugme" class="btn btn-success" onclick="dodajKomentar()">Objavi</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
         <div class="col-6">
             <h5> Dobrodosao/la,   <?php echo $korisnicko ?> </h5>
             <div class="licniPodaci">
@@ -95,7 +120,7 @@ $year = date("Y",time());
                                 if ($status == 'u') {
 
 
-                                    echo "<a href= '#' onmouseover='termin($idTer)' ><p style='color:blue'>uradjeno</p></a>";
+                                    echo "<a href= '#' onclick='termin($idKor)' ><p style='color:blue'>uradjeno</p></a>";
 
                                 } else if ($status == 'z') {
                                     echo '<p style="color:green">'.'zakazano'.'</p>'
@@ -118,7 +143,7 @@ $year = date("Y",time());
      <div id="usluge"></div>
 </div>
 <script>
-               function termin(idTer) {
+            function termin(idKor) {
                
                 xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function () {
@@ -126,7 +151,7 @@ $year = date("Y",time());
                 document.getElementById('usluge').innerHTML = (this.responseText);
                  }
                 };
-                xmlhttp.open("GET", "<?php echo site_url('User/usluge') ?>?idTer=" +idTer, true);
+                xmlhttp.open("GET", "<?php echo site_url('User/usluge') ?>?idKor=" +idKor, true);
                 xmlhttp.send();
            
             } 
@@ -141,11 +166,53 @@ $year = date("Y",time());
            
             } 
             
+            function ostaviKomentar(idRad){
+                document.getElementById("myModal").style.display = "block";
+                document.getElementById("hidden").value = idRad;    
+            }
+            
+            
+            function dodajKomentar(){
+                
+                var idRad = document.getElementById("hidden").value;
+                var komentar = document.getElementById("comment").value;
+               
+                
+                xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange=function(){
+                      if(this.readyState==4&&this.status==200){ 
+                          document.getElementById("myModal").style.display = "none";
+                          document.getElementById(idRad).innerHTML = this.responseText; 
+                          
+//                       
+                   }
+               };
+            xmlhttp.open("POST", "<?php echo site_url('User/dodajKomentar'); ?>", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send("idRad="+idRad+"&komentar="+komentar); 
+                
+            }
+            
             var terminiDiv = document.getElementById("termini");
             var dugmePrikazi = document.getElementById("dugmePrikazi");
             dugmePrikazi.onclick = function(){
                 terminiDiv.style.display = "block";
             };
+            
+            
+             var span = document.getElementsByClassName("close")[0];
+
+    var modal = document.getElementById("myModal");    
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
 
 
            </script>

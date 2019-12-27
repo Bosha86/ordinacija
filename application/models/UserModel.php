@@ -57,15 +57,14 @@ class UserModel extends CI_Model {
         return $query->result_array();
     }
 
-    public function usluge($idKor, $idTer) {
+    public function usluge($idKor) {
         // I DOHVATAMO SVE URADJENE USLUGE ZA ULOGOVANOG KORISNIKA
-        $this->db->select('termin.datum, usluge.naziv, usluge.cena')
+        $this->db->select('radjeno.*, termin.datum, usluge.naziv, usluge.cena')
                 ->from('radjeno')
                 ->join('usluge', 'usluge.idUsl = radjeno.idUsl')
                 ->join('korisnik', 'korisnik.idKor = radjeno.idKor')
                 ->join('termin', 'radjeno.idTer = termin.idTer')
-                ->where('korisnik.idKor', $idKor)
-                ->where('termin.idTer', $idTer);
+                ->where('korisnik.idKor', $idKor);
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -77,6 +76,20 @@ class UserModel extends CI_Model {
                 ->where('termin.idKor', $idKor)
                 ->where('termin.idTer', $idTer);
         $this->db->update();
+    }
+    
+    public function dodajKomentar($idRad, $komentar){
+        $data = array('komentar' => $komentar); 
+        $this->db->where('idRad', $idRad);
+        $this->db->update('radjeno', $data);
+    }
+    
+    public function dohvatiKomentar($idRad){
+        $this->db->select('komentar');
+        $this->db->where('idRad', $idRad);
+        $this->db->from('radjeno');
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
 }

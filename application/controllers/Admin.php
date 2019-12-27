@@ -115,6 +115,12 @@ class Admin extends CI_Controller{
     public function uradjeno(){
         $idTer = $this->input->post('idTer');
         $this->AdminModel->uradjeno($idTer);
+        $podaci = $this->AdminModel->dovatiPodatke($idTer);
+        foreach ($podaci as $podatak){
+            $idKor = $podatak['idKor'];
+            $idUsl = $podatak['idUsl'];
+        }
+        $this->AdminModel->dodajRadjeno($idTer, $idKor, $idUsl);
         echo "Termin je obelezen kao uradjen";
     }
     
@@ -158,6 +164,27 @@ class Admin extends CI_Controller{
             $Mail->Body = $msg;
             $Mail->AddAddress($mejl); 
             $Mail->Send();
+    }
+    
+    public function pretraga(){
+        $korisnicko = $this->input->get('korisnicko');
+        $ime = $this->input->get('ime');
+        $prezime = $this->input->get('prezime');
+        $email = $this->input->get('email');
+        $telefon = $this->input->get('telefon');
+        $rodjen = $this->input->get('rojendan');
+        
+        $rezultat = $this->AdminModel->pretraga($korisnicko, $ime, $prezime, $email, $telefon, $rodjen);
+        if(empty($rezultat)){
+            $data['middle'] = 'middle/admin';
+            $data['middle_data'] = ['msgPret' => 'Nema rezultata'];
+            $this->load->view('viewTemplate', $data);
+        }else{
+            $data['middle'] = 'middle/admin';
+            $data['middle_data'] = ['korisnici' => $rezultat]; 
+            $this->load->view('viewTemplate', $data);
+        }
+        
     }
 
     

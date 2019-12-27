@@ -11,8 +11,7 @@
                         <th scope="col">Datum</th>
                         <th scope="col">Usluga</th>
                         <th scope="col">Cena</th>
-                         
-                        
+                        <th scope="col">Komentar</th>                      
                     </tr>
                 </thead>
                 <tbody>
@@ -21,9 +20,11 @@
                      $sum = 0;
                     foreach($usluge as $u){
                         $rbr +=1;
+                        $idRad = $u['idRad'];
                         $datum = $u['datum'];
                         $usluga = $u['naziv'];
                         $cena = $u['cena'];
+                        $komentar = $u['komentar'];
                         $sum += $cena;
                      ?>
                     <tr>
@@ -31,8 +32,9 @@
                             <td><?php echo $datum ?></td>
                             <td><?php echo $usluga ?></td>
                             <td><?php echo $cena ?></td>
-                           
-                      </tr>
+                            <td id="<?php echo $idRad ?>"><?php if($komentar !== null) echo $komentar; else{?><input type="button" value="Ostavi komentar" class="btn btn-primary" onclick="ostaviKomentar( <?php echo $idRad ?>)"><?php } ?></td>
+                            
+                     </tr>
                  <?php } ?>
                       
 <!--                      PROVERI-->

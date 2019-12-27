@@ -37,9 +37,8 @@ class User extends CI_Controller {
     public function usluge(){
         
         // F-JA ZA DOHVATANJE USLUGA (URADJENIH)
-       $idKor = $this->session->userdata('user')['idKor'];
-       $idTer = $this->input->get('idTer');
-       $usluge = $this->UserModel->usluge($idKor, $idTer);
+       $idKor = $this->input->get('idKor');
+       $usluge = $this->UserModel->usluge($idKor);
        $this->load->view('middle/usluge', ['usluge' => $usluge]);
         
         
@@ -57,6 +56,14 @@ class User extends CI_Controller {
 //LOGOUT
           $this->session->sess_destroy();
           redirect("Login");
+      }
+      
+      public function dodajKomentar(){
+          $idRad = $this->input->post('idRad');
+          $komentar = $this->input->post('komentar');
+          $this->UserModel->dodajKomentar($idRad, $komentar);
+          $kom = $this->UserModel->dohvatiKomentar($idRad);
+          echo $kom[0]['komentar'];
       }
       
       
