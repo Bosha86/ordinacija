@@ -28,7 +28,11 @@
                   <a class="nav-link dugme" href="<?php echo site_url('Stranice/oNama')?>">O nama</a>
                 </li>
                 <li class="nav-item">
+                    <?php if($this->session->userdata('user')['tip'] == "a"){ ?>
+                   <a class="nav-link dugme" href="<?php echo site_url('Admin')?>">Pocetna</a> 
+                    <?php }else{ ?>
                   <a class="nav-link dugme" href="<?php echo site_url('User')?>">Pocetna</a>
+                    <?php } ?>
                 </li>
               </ul>   
 	    <div>   

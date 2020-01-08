@@ -187,6 +187,16 @@ class Admin extends CI_Controller{
         
     }
 
+    public function komentari(){
+        $komentari = $this->AdminModel->sviKomentari();
+        $data['middle'] = 'middle/admin';
+        $data['middle_data'] = ['komentari' => $komentari];
+        $this->load->view('viewTemplate', $data);
+    }
     
+    public function obrisiKomentar($idRad){
+        $this->AdminModel->obrisiKomentar($idRad);
+        $this->komentari();
+    }
     
 }

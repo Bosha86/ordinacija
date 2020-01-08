@@ -34,11 +34,9 @@
             <br/>
             <a href="<?php echo site_url('Admin/korisnici')?>"><div class="admin-meni-dugme">Korisnici</div></a>
             <br/>
-            <a href=""><div class="admin-meni-dugme">Novi korisnik</div></a>
+            <a href="<?php echo site_url('Registracija')?>?admin=1"><div class="admin-meni-dugme">Novi korisnik</div></a>
             <br/>
-            <a href=""><div class="admin-meni-dugme">Statistika</div></a>
-            <br/>
-            <a href=""><div class="admin-meni-dugme">Komentari</div></a>
+            <a href="<?php echo site_url('Admin/komentari')?>"><div class="admin-meni-dugme">Komentari</div></a>
         </div>
     </div> 
     
@@ -70,7 +68,7 @@
               <tr>
                 
                 <th scope="col">Id korisnika</th>
-                <th scope="col">Korisnickoime</th>
+                <th scope="col">Korisnicko ime</th>
                 <th scope="col">Ime</th>
                 <th scope="col">Prezime</th>
                 <th scope="col">E-mail</th>
@@ -97,13 +95,38 @@
                 <?php } ?>
             </tbody>
           </table>
-            <?php }else{
+            <?php }else if(isset($msgPret)){
                 echo $msgPret;
-            }
+            } else if(isset($komentari)){
 ?>
+        <div class="col-7" style="min-height: calc(100vh - 183px)">
+            <h2 style="color: gray">Komentari korisnika</h2>
+            <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Korisnicko ime</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Usluga</th>
+                <th scope="col">Komentar</th>
+                <th>Brisanje</th>
+              </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($komentari as $komentar){
+                    $idRad = $komentar['idRad'];
+                    ?>
+              <tr>
+                <td><?php echo $komentar['korisnicko']?></td>
+                <td><?php echo $komentar['email']?></td>
+                <td><?php echo $komentar['naziv']?></td>
+                <td><?php echo $komentar['komentar']?></td>
+                <td><a href='<?php echo site_url("Admin/obrisiKomentar/$idRad")?>'>Obrisi</a></td>
+              </tr>
+                <?php } ?>
+            </tbody>
+          </table>
         
-        
-
+            <?php } ?>
    
    
         </div>  

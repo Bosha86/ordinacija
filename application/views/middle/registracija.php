@@ -57,7 +57,13 @@
                     <br/>
                     <div class="row">
                         <div class="col">
+                            <?php 
+                            if($this->input->get('admin') == 1){ ?>
+                                <input type="submit" name="regbtn "class="btn btn-primary float-right" value="Dodaj korisnika" onsubmit="skiniAnimaciju()">
+                                <?php }else{
+                            ?>
                             <input type="submit" name="regbtn "class="btn btn-primary float-right" value="Registruj se" onsubmit="skiniAnimaciju()">
+                                <?php } ?>
                         </div>
                     </div>
                 

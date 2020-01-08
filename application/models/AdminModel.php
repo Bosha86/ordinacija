@@ -81,4 +81,22 @@ class AdminModel extends CI_Model{
         return $query->result_array ();
     }
     
+    public function sviKomentari(){
+        $this->db->select('komentar, idRad, naziv, korisnicko, email');
+        $this->db->from('radjeno');
+        $this->db->join('usluge', 'radjeno.idUsl = usluge.idUsl');
+        $this->db->join('korisnik', 'radjeno.idKor = korisnik.idKor');
+        $this->db->where("komentar != '' ");
+        $query=$this->db->get();
+        return $query->result_array ();
+
+        
+    }
+    
+    
+    public function obrisiKomentar($idRad){
+        $this->db->set('komentar', null);
+        $this->db->where('idRad', $idRad);
+        $this->db->update('radjeno');
+    }
 }

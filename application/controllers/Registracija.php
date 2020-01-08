@@ -53,8 +53,12 @@ class Registracija extends CI_Controller {
             $this->output->enable_profiler(false);
             //NAKON USPESNE REGISTRACIJE ISPISUJEMO PORUKU DA JE KORISNIK REGISTROVAN
             //I VRACAMO GA NA POCETNU DA SE ULOGUJE
+            if($this->session->userdata('user')['tip'] !== "a"){
             $this->session->set_flashdata('regPoruka', 'Uspesno ste se registrovali. Ulogujte se kako biste pristupili svom korisnickom profilu.');
             redirect('Login');
+            }else{
+            redirect('Admin');  
+            }
         }
     }
     //FUNCKIJA ZA VALIDACIJU LOZINKE
