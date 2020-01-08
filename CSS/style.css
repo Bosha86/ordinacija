@@ -1,5 +1,5 @@
 #header { 
-	background: #809fff;
+	background: #894186;
 /*	border-radius: 15px;*/
 	
 	height:100px;
@@ -116,7 +116,7 @@
 }
 
 #footer {
-	background:#809fff;
+	background:#894186;
 	padding:20px 0;
         position: relative;
         right: 0;
@@ -142,7 +142,7 @@
 }
 
 .reg-wrapper{
-       background-color: rgba(128, 159, 255, 0.5);
+       background-color: rgba(159, 73, 153, 0.6);
        padding: 50px;
 }
 
@@ -182,7 +182,7 @@ div#calendar div.box{
     left:0px;
     width:100%;
     height:60px;
-    background-color: #809fff ;   
+    background-color: #894186 ;   
 }
  
 div#calendar div.header{
@@ -225,7 +225,7 @@ div#calendar div.header a.next{
  
 /*******************************Calendar Content Cells*********************************/
 div#calendar div.box-content{
-    border:1px solid #809fff ;
+    border:1px solid #894186 ;
     border-top:none;
 }
  
@@ -251,7 +251,7 @@ div#calendar ul.label li{
     line-height:40px;
     vertical-align:middle;
     text-align:center;
-    color:#809fff;
+    color:#894186;
     font-size: 25px;
     font-weight: bold;
     background-color: transparent;
@@ -303,7 +303,7 @@ div.clear{
 }     
 
 .danas{
-    border: 1.5px solid #809fff;
+    border: 1.5px solid #894186;
 }
 
 /*.danas:hover{
@@ -358,17 +358,17 @@ div.clear{
 
 .usluga-naziv{
     font-size: 30px;
-    color: #809fff;
+    color: #894186;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .naslov{
-    color: #809fff;
+    color: #894186;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .termini{
-    border: 1px solid #809fff;
+    border: 1px solid #894186;
     height: 450px;
     overflow: auto;
     width: 350px;
@@ -385,7 +385,7 @@ div.clear{
     position: -webkit-sticky;
     position: sticky;
     top:0;
-    background-color: #809fff;
+    background-color: #894186;
     color: white;
 
 }
@@ -447,7 +447,7 @@ div.clear{
 
 .zakazi-dugme{
     height: 50px;
-    background-color: #809fff;
+    background-color: #894186;
     color: white;
     font-size: 20px;
     width: 342px;
@@ -474,11 +474,11 @@ div.clear{
 
 #skrol::-webkit-scrollbar-thumb
 {
-	background-color: #809fff;
+	background-color: #894186;
 }
 
 .select-doktor{
-    background-color: #809fff;
+    background-color: #894186;
     color: white;
     border: 0.5px solid #D8BFD8;
 }
@@ -565,7 +565,7 @@ div.clear{
 
 .modal-header{
   padding: 2px 16px;
-  background-color: #809fff;
+  background-color: #894186;
   color: white;
 }
 
@@ -576,7 +576,7 @@ div.clear{
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #809fff;
+  background-color: #894186;
   color: white;
 }
 
@@ -619,7 +619,7 @@ div.clear{
 
 .carousel-caption h1{
     font-size: 35px;
-    background-color: #809fff;
+    background-color: #894186;
     padding: 8px;
 }
 
@@ -639,7 +639,7 @@ div.clear{
 
 .carousel-caption p{
     font-size: 20px;
-    background-color: #FFDA31;
+    background-color: rgb(216, 100, 209);
     padding: 5px;
 }
 
@@ -648,12 +648,30 @@ div.clear{
     background-color: white;
 }
 
+
+.btn-pocetna{
+    background-color: white !important;
+    color: rgb(216, 100, 209) !important;
+    border: 1px solid rgb(216, 100, 209) !important; 
+}
+
+.btn-pocetna:hover{
+    background-color: rgb(216, 100, 209) !important;
+    color: white !important;
+    outline: none !important;
+}
+
+.btn-pocetna:focus{
+    border: 1px solid rgb(216, 100, 209)!important;
+    outline: none !important;
+}
+
 .dugme-vise{
     width: 150px;
     padding: 5px;
     background-color: white;
-    color: #FFDA31;
-    border: 1px solid #FFDA31;
+    color: rgb(216, 100, 209);
+    border: 1px solid rgb(216, 100, 209);
     font-size: 1.1em;
     opacity: 0;
     position: absolute;
@@ -670,12 +688,12 @@ div.clear{
 }
 
 .dugme-vise:focus{
-    border: 1px solid #FFDA31;
+    border: 1px solid rgb(216, 100, 209);
     outline: none;
 }
 
 .dugme-vise:hover{
-    background-color: #FFDA31;
+    background-color: rgb(216, 100, 209);
     color: white;
     text-decoration: none;
 }
@@ -706,7 +724,7 @@ div.clear{
 .parallax-unutra{
     min-height: 500px;
     width: 100%;
-    background-color: rgba(128, 159, 255, 0.8);
+    background-color: rgba(159, 73, 153, 0.6);
 }
 
 .parallax-img{
@@ -731,7 +749,7 @@ div.clear{
 }
 
 .card-body h3{
-    color: #809fff;
+    color: #894186;
 }
 
 .card-body h3:hover{
@@ -756,7 +774,7 @@ div.clear{
 }
 
 .parallax1{
-    background-image: url('../images/instrumenti.jpg');
+    background-image: url('../images/pozadina_instrumenti.jpg');
     min-height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -767,7 +785,7 @@ div.clear{
 .parallax1-unutra{
     min-height: 500px;
     min-width: 50%;
-    background-color: rgba(128, 159, 255, 0.8);
+    background-color: rgba(159, 73, 153, 0.6);
 }
 
 
@@ -874,7 +892,7 @@ div.clear{
 }
 
 .table-hover thead{
-    background-color: #809fff;
+    background-color: #894186;
     color: white;
 }
 
@@ -896,7 +914,7 @@ div.clear{
 }
 
 .oNama-filter{
-    background-color: rgba(128, 159, 255, 0.4);
+    background-color: rgba(159, 73, 153, 0.4);
     min-height: 150px;
     width: 100%;
 }
@@ -985,7 +1003,7 @@ div.clear{
 
 .modal-header-lozinka{
   padding: 2px 16px;
-  background-color: #809fff;
+  background-color: #894186;
   color: white;
 }
 
@@ -1062,7 +1080,7 @@ div.clear{
 
 
 .datum-termin-sredjeno{
-     background-color: #809fff;
+     background-color: #894186;
     color: white;
     font-weight: bold;
     padding: 20px;
@@ -1078,7 +1096,7 @@ div.clear{
 
 .sat{
     font-weight: bold;
-    color: #809fff;
+    color: #894186;
     padding: 5px;
 }
 
@@ -1089,7 +1107,7 @@ div.clear{
 
 .slobodni-termini{
    padding: 5px;
-   color: #809fff;
+   color: #894186;
 }
 
 .pretraga-div{
@@ -1104,7 +1122,7 @@ div.clear{
 
 .admin-meni-dugme{
     padding: 20px;
-    background-color: #809fff;
+    background-color: #894186;
     color: white;
 }
 

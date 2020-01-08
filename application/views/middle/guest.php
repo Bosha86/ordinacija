@@ -103,7 +103,7 @@ OVDE SE ISPISUJE-->
     <div class="row">
         <div class="col-8 offset-2 podnaslov text-center">
             <p style="color:gray">DUGOGODIŠNJE ISKUSTVO - NAJSAVREMENIJA TEHNOLOGIJA - STRUČNJACI OD POVERENJA</p>
-            <h1 style="color:#809fff; font-weight: bold;">Ostanite nasmejani i zdravi</h1>
+            <h1 style="color:#894186; font-weight: bold;">Ostanite nasmejani i zdravi</h1>
             <p style="color:gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.Consectetur, mollitia amet nihil! Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
         </div>
     </div>
@@ -112,21 +112,21 @@ OVDE SE ISPISUJE-->
     <div class="row">
       <div class="col-lg-4 text-center">
           <img src="<?php echo base_url().'/usluge/beljenje.jpg'?>" class="rounded-circle img-round" width="140" height="140">
-        <h2 style="color:#809fff">Beljenje</h2>
-        <p style="color:gray">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-        <p><a class="btn btn-outline-info" href="<?php echo site_url('Stranice/usluge')?>#beljenje" role="button">Detaljnije &raquo;</a></p>
+        <h2 style="color:#894186">Beljenje</h2>
+        <p style="color:#894186">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-outline-info btn-pocetna" href="<?php echo site_url('Stranice/usluge')?>#beljenje" role="button">Detaljnije &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4 text-center">
         <img src="<?php echo base_url().'/usluge/vadjenje.jpg'?>" class="rounded-circle img-round" width="140" height="140">
-        <h2 style="color:#809fff">Vađenje</h2>
-        <p style="color:gray">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        <p><a class="btn btn-outline-info" href="<?php echo site_url('Stranice/usluge')?>#vadjenje" role="button">Detaljnije &raquo;</a></p>
+        <h2 style="color:#894186">Vađenje</h2>
+        <p style="color:#894186">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-outline-info btn-pocetna" href="<?php echo site_url('Stranice/usluge')?>#vadjenje" role="button">Detaljnije &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4 text-center">
        <img src="<?php echo base_url().'/usluge/anestezija.jpg'?>" class="rounded-circle img-round" width="140" height="140">
-        <h2 style="color:#809fff">Lečenje</h2>
-        <p style="color:gray">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-outline-info" href="<?php echo site_url('Stranice/usluge')?>#lecenje" role="button">Detaljnije &raquo;</a></p>
+        <h2 style="color:#894186">Lečenje</h2>
+        <p style="color:#894186">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-outline-info btn-pocetna" href="<?php echo site_url('Stranice/usluge')?>#lecenje" role="button">Detaljnije &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
     </div>
@@ -151,7 +151,7 @@ OVDE SE ISPISUJE-->
                              </div>
                              <div class="col-6">
                                  <h2 style="color: white">Dve decenije poverenja</h2>
-                                 <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+                                 <p style="color: white">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
                              </div>
                          </div>
                          <div class="row parallax-pasus">
@@ -160,7 +160,7 @@ OVDE SE ISPISUJE-->
                              </div>
                              <div class="col-6">
                                  <h2 style="color: white">Lider u protetici</h2>
-                                 <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+                                 <p style="color: white">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
                              </div>
                          </div>
                          <div class="row parallax-pasus">
@@ -169,13 +169,13 @@ OVDE SE ISPISUJE-->
                              </div>
                              <div class="col-6">
                                  <h2 style="color: white">Vaš osmeh je naš posao</h2>
-                                 <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+                                 <p style="color: white">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
                              </div>
                          </div>
                            <br/>
                         <div class="row parallax-btn">
                             <div class="col-4 offset-4 text-center">
-                                <a href="<?php echo site_url('Stranice/oNama')?>" class="btn btn-warning">Vise o nama</a>
+                                <a href="<?php echo site_url('Stranice/oNama')?>" class="btn btn-pocetna">Vise o nama</a>
                             </div>
                          </div> 
                            <br/>
@@ -188,7 +188,7 @@ OVDE SE ISPISUJE-->
  <div class="container-fluid doktori-pocetna">  
      <div class="row">
          <div class="col-10 offset-1 text-center">
-             <h1 style="margin-bottom: 30px; color:#809fff">Upoznajte naš tim</h1>
+             <h1 style="margin-bottom: 30px; color:#894186">Upoznajte naš tim</h1>
          </div>
      </div>
     <div class="card-group">
@@ -284,7 +284,7 @@ OVDE SE ISPISUJE-->
                         </div>
                         <div class="row hidden"> 
                             <div class="col-10 offset-1 text-center">
-                                <a href="<?php echo site_url('Registracija')?>" class="btn btn-warning" style="margin-top: 15px;">Registrujte se</a>
+                                <a href="<?php echo site_url('Registracija')?>" class="btn btn-pocetna" style="margin-top: 15px;">Registrujte se</a>
                                 <br/>
                                 <a href="#" onclick="prikaziLogin()"><small class="malo">Vec imate nalog?</small></a>
                             </div>

@@ -7,7 +7,7 @@ and open the template in the editor.
 <div class="contact-us" id="kontakt">
          <div class="row">
              <div class="col-12 text-center">
-                 <h2 style="margin-bottom: 30px; color: #809fff">Kontakt</h2>
+                 <h2 style="margin-bottom: 30px; color: #894186">Kontakt</h2>
              </div>
          </div>
        <div class="container">
@@ -53,7 +53,7 @@ and open the template in the editor.
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="submit" class="btn btn-warning" value="Pošalji">
+                                    <input type="submit" class="btn btn-pocetna" value="Pošalji">
                                 </div>
                             </div>
                             <div class="row">

@@ -64,7 +64,7 @@
                                 </div>
                             </div>
                             <br/>
-                            <button class="btn btn-outline-warning" type="submit">Login</button>
+                            <button class="btn btn-pocetna" type="submit">Login</button>
                          </form>
                     </div>
                     <div class="modal-footer">
